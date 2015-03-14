@@ -23,9 +23,11 @@ public class PlayActivity extends Activity implements OnClickListener {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		
-		setContentView(R.layout.activity_play);
-		play_button = (ImageView) findViewById(R.id.act_play_Pbutton);
-		play_button.setOnClickListener(this);
+		setContentView(R.layout.media_paly_view);
+		
+//		setContentView(R.layout.activity_play);
+//		play_button = (ImageView) findViewById(R.id.act_play_Pbutton);
+//		play_button.setOnClickListener(this);
 		
 		
 	}

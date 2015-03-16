@@ -1,0 +1,5 @@
+<resources>
+
+    <color name="progress_background">#ffff0000</color>
+    <color name="progress_progress">#ffa2e028</color>
+</resources>

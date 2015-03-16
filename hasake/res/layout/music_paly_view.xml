@@ -6,6 +6,7 @@
     android:orientation="vertical" >
 
     <TextView
+        android:id="@+id/music_play_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="10dp"
@@ -14,7 +15,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_height="280dp"
         android:orientation="horizontal" >
 
         <LinearLayout
@@ -25,17 +26,24 @@
             android:orientation="vertical" >
 
             <ImageView
+                android:id="@+id/music_play_background"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"
                 android:background="@drawable/test_play_background" />
 
-            <ImageView
+            <SeekBar
+                android:id="@+id/music_play_progress"
                 android:layout_width="match_parent"
-                android:layout_height="10dp"
-                android:background="#ffff0000" />
+                android:layout_height="5dp"
+                android:padding="0dp"
+                android:progress="0"
+                android:progressDrawable="@drawable/music_progress_bar"
+                android:thumb="@drawable/player_progressbar_thumb"
+                android:thumbOffset="2dp" />
 
             <TextView
+                android:id="@+id/music_play_time"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="right"
@@ -55,6 +63,7 @@
                 android:layout_weight="1" />
 
             <TextView
+                android:id="@+id/music_play_special"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -68,12 +77,13 @@
                 android:layout_weight="1" />
 
             <TextView
+                android:id="@+id/music_play_zan"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:drawableTop="@drawable/icon_play"
                 android:gravity="center_horizontal"
-                android:text="专辑" />
+                android:text="赞" />
 
             <View
                 android:layout_width="wrap_content"
@@ -81,12 +91,13 @@
                 android:layout_weight="1" />
 
             <TextView
+                android:id="@+id/music_play_history"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:drawableTop="@drawable/icon_play"
                 android:gravity="center_horizontal"
-                android:text="专辑" />
+                android:text="播放记录" />
 
             <View
                 android:layout_width="wrap_content"
@@ -107,24 +118,30 @@
             android:gravity="center_horizontal" >
 
             <ImageView
+                android:id="@+id/music_play_up"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:src="@drawable/test_left" />
 
             <ImageView
+                android:id="@+id/music_play_now"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:src="@drawable/test_play" />
 
             <ImageView
+                android:id="@+id/music_play_next"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:src="@drawable/test_right" />
         </LinearLayout>
 
         <View
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
             android:layout_weight="1" />
     </LinearLayout>
 

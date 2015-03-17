@@ -1,0 +1,138 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:scrollbars="none" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#ffffff"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dip"
+            android:orientation="horizontal"
+            android:padding="10dip" >
+
+            <EditText
+                android:id="@+id/et_search"
+                android:layout_width="0dip"
+                android:layout_height="match_parent"
+                android:layout_weight="8" 
+                />
+
+            <ImageView
+                android:id="@+id/iv_search"
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:src="@drawable/ic_launcher" />
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="150dip"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_launcher" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:drawablePadding="5dip"
+                android:drawableTop="@drawable/ic_launcher"
+                android:gravity="center"
+                android:text="文学名著" />
+
+            <TextView
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:drawablePadding="5dip"
+                android:drawableTop="@drawable/ic_launcher"
+                android:gravity="center"
+                android:text="娱乐" />
+
+            <TextView
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:drawablePadding="5dip"
+                android:drawableTop="@drawable/ic_launcher"
+                android:gravity="center"
+                android:text="历史" />
+
+            <TextView
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:drawablePadding="5dip"
+                android:drawableTop="@drawable/ic_launcher"
+                android:gravity="center"
+                android:text="习俗文化" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dip"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:drawablePadding="5dip"
+                android:drawableTop="@drawable/ic_launcher"
+                android:gravity="center"
+                android:text="音乐" />
+
+            <TextView
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:drawablePadding="5dip"
+                android:drawableTop="@drawable/ic_launcher"
+                android:gravity="center"
+                android:text="儿童" />
+
+            <TextView
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:drawablePadding="5dip"
+                android:drawableTop="@drawable/ic_launcher"
+                android:gravity="center"
+                android:text="教育" />
+
+            <TextView
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:drawablePadding="5dip"
+                android:drawableTop="@drawable/ic_launcher"
+                android:gravity="center"
+                android:text="更多" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dip"
+            android:layout_marginTop="10dip"
+            android:background="#808080" />
+
+        <LinearLayout
+            android:id="@+id/ll_music_type"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+        </LinearLayout>
+    </LinearLayout>
+
+</ScrollView>

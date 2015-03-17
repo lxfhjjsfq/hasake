@@ -3,10 +3,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent" >
 
-    <Button
-        android:id="@+id/navigate_play"
+    <FrameLayout
+        android:id="@+id/fl_home"
         android:layout_width="match_parent"
-        android:layout_height="100dp" 
-        android:layout_gravity="center_vertical"/>
+        android:layout_height="match_parent" /> 
 
 </FrameLayout>

@@ -1,36 +1,60 @@
 package com.tingshu.hasake;
 
 import android.app.Activity;
+import android.content.Context;
 import android.os.Bundle;
 
 public abstract class BaseActivity extends Activity {
+	public Context context;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		context=this;
 		setcontentView();
 		initView();
 		initListener();
 		initData();
 	}
+
 	/**
-	 * 加载试图
+	 * 鍔犺浇甯冨眬鏂囦欢
 	 */
 	protected abstract void setcontentView();
 
 	/**
-	 * 初始化view
+	 * 鍔犺浇view
 	 */
 	protected abstract void initView();
 
 	/***
-	 * 初始化数据
+	 * 鍔犺浇鏁版嵁
 	 */
 	protected abstract void initData();
 
 	/**
-	 * 添加监听
+	 * 缁戝畾鐩戝惉
 	 */
 	protected abstract void initListener();
+
+	@Override
+	protected void onResume() {
+		super.onResume();
+	}
+
+	@Override
+	protected void onRestart() {
+		super.onRestart();
+	}
+
+	@Override
+	protected void onPause() {
+		super.onPause();
+	}
+
+	@Override
+	protected void onDestroy() {
+		super.onDestroy();
+	}
 
 }

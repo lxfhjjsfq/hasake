@@ -1,22 +1,12 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent" >
 
-    <LinearLayout
+    <com.tingshu.hasake.widget.MusicPlayView 
+        android:id="@+id/act_play_music_view"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" >
-
-        <com.tingshu.hasake.widget.MusicAnimation
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
-    </LinearLayout>
-
-    <ImageView 
-        android:id="@+id/act_play_Pbutton"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:src="@drawable/play_button"
-        android:layout_gravity="center"/>
+        android:layout_height="wrap_content"
+        />
     
-</FrameLayout>
+</LinearLayout>

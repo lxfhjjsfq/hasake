@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="#7f000000"
+    android:background="#ff000000"
     android:orientation="vertical" >
 
     <TextView
@@ -11,18 +11,19 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="10dp"
         android:layout_marginTop="10dp"
+        android:textColor="#ffffffff"
         android:text="一个90后的心声" />
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="280dp"
+        android:layout_height="240dp"
         android:orientation="horizontal" >
 
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="4"
-            android:background="#ffffff00"
+            android:background="#ff000000"
             android:orientation="vertical" >
 
             <ImageView
@@ -54,7 +55,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="#ffffffff"
+            android:background="#ff000000"
             android:orientation="vertical" >
 
             <View
@@ -69,6 +70,7 @@
                 android:layout_gravity="center"
                 android:drawableTop="@drawable/icon_play"
                 android:gravity="center_horizontal"
+                android:textColor="#7fffffff"
                 android:text="专辑" />
 
             <View
@@ -83,6 +85,7 @@
                 android:layout_gravity="center_horizontal"
                 android:drawableTop="@drawable/icon_play"
                 android:gravity="center_horizontal"
+                android:textColor="#7fffffff"
                 android:text="赞" />
 
             <View
@@ -97,6 +100,7 @@
                 android:layout_gravity="center_horizontal"
                 android:drawableTop="@drawable/icon_play"
                 android:gravity="center_horizontal"
+                android:textColor="#7fffffff"
                 android:text="播放记录" />
 
             <View
@@ -109,6 +113,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:padding="8dip"
         android:orientation="horizontal" >
 
         <LinearLayout

@@ -2,18 +2,21 @@ package com.tingshu.hasake.test;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.widget.GridView;
+import android.widget.ListView;
 import android.widget.Toast;
 
 import com.fengwei.app.media.MediaPlayManager;
 import com.fengwei.app.media.MediaPlayManager.OnMediaPlayStateListener;
 import com.tingshu.hasake.R;
+import com.tingshu.hasake.adapter.PlayMusicGvAdapter;
 import com.tingshu.hasake.widget.MusicPlayView;
 import com.tingshu.hasake.widget.MusicPlayView.MusicClickListener;
 
 public class PlayActivity extends Activity implements MusicClickListener, OnMediaPlayStateListener {
 
 	private MusicPlayView mMusicPlayView;
-
+	
 	private int index = 0;
 	private String[] test_titles={"白天鹅","卡农","大漠秋凉"};
 	private String[] test_urls = {
@@ -27,8 +30,10 @@ public class PlayActivity extends Activity implements MusicClickListener, OnMedi
 		setContentView(R.layout.activity_play);
 		
 		mMusicPlayView = (MusicPlayView) findViewById(R.id.act_play_music_view);
+		
 		mMusicPlayView.setMusicClickListener(this);
 		MediaPlayManager.getInstance().setOnMediaPlayStateListener(this);
+		
 	}
 
 	@Override

@@ -7,6 +7,7 @@
     android:padding="5dip" >
 
     <RelativeLayout
+        android:id="@+id/rl_more"
         android:layout_width="match_parent"
         android:layout_height="20dip"
         android:orientation="horizontal" >

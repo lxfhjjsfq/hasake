@@ -28,12 +28,14 @@ public class PlayActivity extends Activity implements MusicClickListener, OnMedi
 		super.onCreate(savedInstanceState);
 		
 		setContentView(R.layout.activity_play);
-		
 		mMusicPlayView = (MusicPlayView) findViewById(R.id.act_play_music_view);
 		
 		mMusicPlayView.setMusicClickListener(this);
 		MediaPlayManager.getInstance().setOnMediaPlayStateListener(this);
 		
+		mMusicPlayView = (MusicPlayView) findViewById(R.id.act_play_music_view);
+		mMusicPlayView.setMusicClickListener(this);
+		MediaPlayManager.getInstance().setOnMediaPlayStateListener(this);
 	}
 
 	@Override

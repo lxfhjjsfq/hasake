@@ -6,9 +6,12 @@ import android.os.Bundle;
 
 public abstract class BaseActivity extends Activity {
 
+	protected Context context;
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		context = this;
 		setcontentView();
 		initView();
 		initListener();

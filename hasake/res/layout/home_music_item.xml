@@ -2,17 +2,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-   	android:orientation="vertical"
-   	android:gravity="center"
-   	android:padding="5dip">
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="5dip" >
 
-    <ImageView android:layout_width="100dip"
+    <ImageView
+        android:layout_width="100dip"
         android:layout_height="100dip"
-        android:src="@drawable/ic_launcher"/>
+        android:src="@drawable/ic_launcher" />
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="周杰伦" 
-        android:layout_marginTop="5dip"/>
+        android:layout_marginTop="5dip"
+        android:text="周杰伦" />
 
 </LinearLayout>

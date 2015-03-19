@@ -22,7 +22,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:drawablePadding="8dip"
-            android:drawableRight="@drawable/test_vip"
+            android:drawableRight="@drawable/icon_vip"
             android:gravity="center_vertical"
             android:text="90后"
             android:textColor="#ff494949"

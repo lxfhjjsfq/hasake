@@ -173,6 +173,22 @@ public class MediaPlayManager {
 		}
 	}
 
+	public int getProgress(){
+		if (null != mediaPlayer) {
+			if(mediaPlayer.getDuration() > 0){
+				return mediaPlayer.getCurrentPosition() * 100 / mediaPlayer.getDuration();
+			}
+		}
+		return 0;
+	}
+	
+	public int getDuration(){
+		if (null != mediaPlayer) {
+			return mediaPlayer.getDuration();
+		}
+		return 0;
+	}
+	
 	/**
 	 * 播放状态
 	 */

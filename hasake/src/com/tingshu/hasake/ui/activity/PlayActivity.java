@@ -1,7 +1,11 @@
-package com.tingshu.hasake.test;
+package com.tingshu.hasake.ui.activity;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
+import android.util.Log;
 import android.widget.GridView;
 import android.widget.ListView;
 import android.widget.Toast;
@@ -10,19 +14,21 @@ import com.fengwei.app.media.MediaPlayManager;
 import com.fengwei.app.media.MediaPlayManager.OnMediaPlayStateListener;
 import com.tingshu.hasake.R;
 import com.tingshu.hasake.adapter.PlayMusicGvAdapter;
+import com.tingshu.hasake.utils.DateUtil;
 import com.tingshu.hasake.widget.MusicPlayView;
 import com.tingshu.hasake.widget.MusicPlayView.MusicClickListener;
 
 public class PlayActivity extends Activity implements MusicClickListener, OnMediaPlayStateListener {
 
 	private MusicPlayView mMusicPlayView;
+	private ProgressThread mThread;
 	
 	private int index = 0;
 	private String[] test_titles={"白天鹅","卡农","大漠秋凉"};
 	private String[] test_urls = {
-	"http://bj.dl.baidupcs.com/file/d38d18cd4420c9e5a133b68759d76aeb?bkt=p2-qd-915&fid=3020055452-250528-578110588467393&time=1426585606&sign=FDTAXERLBH-DCb740ccc5511e5e8fedcff06b081203-D1%2B8gq%2Fu66lwxwVZd4wbQUWELy8%3D&to=abp&fm=Qin,B,U,tt&newver=1&newfm=1&flow_ver=3&sl=79429708&expires=8h&rt=sh&r=858124164&mlogid=3842963396&vuk=3020055452&vbdid=1915860146&fin=%E6%9C%B1%E5%93%B2%E7%90%B4%20-%20%E6%96%B0%E7%96%86%E4%BC%8A%E7%8A%81%E5%93%88%E8%90%A8%E5%85%8B%E6%97%8F%E5%86%AC%E4%B8%8D%E6%8B%89%E7%8B%AC%E5%A5%8F%E3%80%8A%E7%99%BD%E5%A4%A9%E9%B9%85%E3%80%8B.mp3&fn=%E6%9C%B1%E5%93%B2%E7%90%B4%20-%20%E6%96%B0%E7%96%86%E4%BC%8A%E7%8A%81%E5%93%88%E8%90%A8%E5%85%8B%E6%97%8F%E5%86%AC%E4%B8%8D%E6%8B%89%E7%8B%AC%E5%A5%8F%E3%80%8A%E7%99%BD%E5%A4%A9%E9%B9%85%E3%80%8B.mp3",
-	"http://bj.dl.baidupcs.com/file/0a3e467e0f813e1b655b7fb09a10764b?bkt=p2-qd-915&fid=3020055452-250528-461622072047359&time=1426585648&sign=FDTAXERLBH-DCb740ccc5511e5e8fedcff06b081203-IWKG9NdRfgOWZGIgU2j%2FcqlK1%2BE%3D&to=abp&fm=Qin,B,U,tt&newver=1&newfm=1&flow_ver=3&sl=79429708&expires=8h&rt=sh&r=209903236&mlogid=1215875637&vuk=3020055452&vbdid=1915860146&fin=%E5%8D%A1%E5%86%9C.mp3&fn=%E5%8D%A1%E5%86%9C.mp3",								
-	"http://bj.dl.baidupcs.com/file/ab50197b8350e273070276e9b4b6f51b?bkt=p2-qd-915&fid=3020055452-250528-669644702059677&time=1426585668&sign=FDTAXERLBH-DCb740ccc5511e5e8fedcff06b081203-EGgbWIxN9q0W9nVn3qhsSOEEQaU%3D&to=abp&fm=Qin,B,U,tt&newver=1&newfm=1&flow_ver=3&sl=79429708&expires=8h&rt=sh&r=317190010&mlogid=1064198547&vuk=3020055452&vbdid=1915860146&fin=Various%20Artists%20-%20%E5%A4%A7%E6%BC%A0%E7%A7%8B%E5%87%89-%E5%93%88%E8%90%A8%E5%85%8B%E6%97%8F.mp3&fn=Various%20Artists%20-%20%E5%A4%A7%E6%BC%A0%E7%A7%8B%E5%87%89-%E5%93%88%E8%90%A8%E5%85%8B%E6%97%8F.mp3"};
+	"/mnt/sdcard/hasake/baitiane.mp3",
+	"/mnt/sdcard/hasake/kanon.mp3",								
+	"/mnt/sdcard/hasake/damoqiuliang.mp3"};
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -75,15 +81,36 @@ public class PlayActivity extends Activity implements MusicClickListener, OnMedi
 	public void onMusicPlayPause() {
 		MediaPlayManager.getInstance().pausePlay();
 	}
+	
+	@Override
+	public void onMusicSpecial() {
+		Intent it = new Intent(this, SpecialActivity.class);
+		startActivity(it);
+	}
+	@Override
+	public void onMusicZan() {
+		Intent it = new Intent(this, ZanActivity.class);
+		startActivity(it);
+	}
+	@Override
+	public void onMusicHistory() {
+		Intent it = new Intent(this, HistoryActivity.class);
+		startActivity(it);
+	}
 	/*******************播放状态监听**********************/
 	@Override
 	public void onPlayStart(String playUrl) {
 		Toast.makeText(this, "onPlayStart", Toast.LENGTH_SHORT).show();
+		//设置播放时长
+		mMusicPlayView.setTime(DateUtil.getFormatTime(MediaPlayManager.getInstance().getDuration() / 1000));
+		mThread = new ProgressThread();
+		mThread.start();
 	}
 
 	@Override
 	public void onPlayComplete(String playUrl) {
 		Toast.makeText(this, "onPlayComplete", Toast.LENGTH_SHORT).show();
+		mThread.stopPlay();
 	}
 
 	@Override
@@ -94,6 +121,7 @@ public class PlayActivity extends Activity implements MusicClickListener, OnMedi
 	@Override
 	public void onPlayErro(String playUrl) {
 		Toast.makeText(this, "onPlayErro", Toast.LENGTH_SHORT).show();
+		mThread.stopPlay();
 	}
 
 	@Override
@@ -101,4 +129,44 @@ public class PlayActivity extends Activity implements MusicClickListener, OnMedi
 		Toast.makeText(this, "onPlayPause", Toast.LENGTH_SHORT).show();
 	}
 
+	class ProgressThread extends Thread{
+		private int progress = 0;
+		private boolean playing = true;
+		@Override
+		public void run() {
+			
+			while(playing){
+				progress = MediaPlayManager.getInstance().getProgress();
+				
+				if(progress > 0){
+					//设置播放器进度
+					Message msg = mHandler.obtainMessage(); 
+					msg.what = PLAY_UPDATE_PROGRESS;
+					msg.arg1 = progress;
+					mHandler.sendMessage(msg);
+				}
+				try {
+					Thread.sleep(300);
+				} catch (InterruptedException e) {
+					e.printStackTrace();
+				}
+			}
+		}
+		public void stopPlay(){
+			playing = false;
+		}
+	}
+	
+	private final int PLAY_UPDATE_PROGRESS = 1;
+	
+	Handler mHandler = new Handler(){
+		public void handleMessage(android.os.Message msg) {
+			switch(msg.what){
+			case PLAY_UPDATE_PROGRESS:
+				mMusicPlayView.setProgress(msg.arg1);
+				Log.e("play music", "progress : " + msg.arg1);
+				break;
+			}
+		};
+	};
 }

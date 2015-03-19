@@ -25,14 +25,17 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.tingshu.hasake.test.PlayActivity" >
+        <activity android:name="com.tingshu.hasake.ui.activity.PlayActivity" android:screenOrientation="portrait" >
                         <!--intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter-->
         </activity>
-        <activity android:name="com.tingshu.hasake.ui.activity.FansActivity"></activity>
+        <activity android:name="com.tingshu.hasake.ui.activity.FansActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.tingshu.hasake.ui.activity.SpecialActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.tingshu.hasake.ui.activity.ZanActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.tingshu.hasake.ui.activity.HistoryActivity" android:screenOrientation="portrait"/>
     </application>
 
     <uses-permission android:name="android.permission.INTERNET" />

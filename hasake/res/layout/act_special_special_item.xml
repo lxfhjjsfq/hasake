@@ -6,57 +6,61 @@
 
     <ImageView
         android:layout_width="0dip"
-        android:layout_height="50dip"
+        android:layout_height="60dip"
         android:layout_gravity="center_vertical"
         android:layout_weight="1"
-        android:src="@drawable/test_play_attetion_icon" />
+        android:src="@drawable/ic_launcher" />
 
     <LinearLayout
         android:layout_width="0dip"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:layout_weight="4"
         android:layout_marginLeft="8dip"
         android:orientation="vertical" >
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="0dip"
+            android:layout_weight="2"
             android:drawablePadding="8dip"
-            android:drawableRight="@drawable/icon_vip"
-            android:gravity="center_vertical"
-            android:text="90后"
-            android:textColor="#ff296fcf" />
+            android:drawableLeft="@drawable/test_play_zan"
+            android:gravity="top"
+            android:maxLines="2"
+            android:text="专辑系列《糗事联播-12月主播秀(2014)》"
+            android:textColor="#ff494949"
+            />
+
 
         <LinearLayout
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="0dip"
+            android:layout_marginTop="5dip"
+            android:layout_weight="1"
             android:orientation="horizontal" >
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="声音587"
+                android:layout_marginRight="10dip"
+                android:textSize="12sp"
+                android:text="节目数:9"
                 android:textColor="#ff888888" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="粉丝65.5万"
+                android:textSize="12sp"
+                android:text="更新时间:2014-12-07"
                 android:textColor="#ff888888" />
         </LinearLayout>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="90后心灵的寄托"
-            android:textColor="#ff494949" />
     </LinearLayout>
 
     <ImageView
+        android:id="@+id/act_special_special_item_button"
         android:layout_width="0dip"
-        android:layout_height="50dip"
-        android:layout_weight="2"
+        android:layout_height="20dip"
+        android:layout_weight="1"
         android:layout_gravity="center_vertical"
-        android:src="@drawable/test_attention_button" />
+        android:src="@drawable/test_fans_button" />
 
 </LinearLayout>

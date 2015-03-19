@@ -13,6 +13,15 @@
         android:orientation="horizontal" >
 
         <ImageView
+            android:id="@+id/act_history_item_check"
+            android:layout_width="20dip"
+            android:layout_height="20dip"
+            android:layout_margin="10dip"
+            android:visibility="gone"
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/history_check" />
+
+        <ImageView
             android:layout_width="0dip"
             android:layout_height="60dip"
             android:layout_gravity="center_vertical"
@@ -58,15 +67,15 @@
     <View
         android:layout_width="match_parent"
         android:layout_height="1px"
-        android:layout_marginTop="5dip"
         android:layout_marginBottom="5dip"
+        android:layout_marginTop="5dip"
         android:background="#ff999999" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginRight="10dip"
         android:layout_marginLeft="10dip"
+        android:layout_marginRight="10dip"
         android:text="上次播放:周一:可还曾极低那年，那天，那阳光-绒绒【晚上十点383期】到(28分32秒)"
         android:textColor="#ff888888"
         android:textSize="12sp" />

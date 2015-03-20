@@ -11,16 +11,18 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="60dip"
+            android:layout_height="28dip"
             android:orientation="horizontal"
-            android:padding="10dip" >
+            android:paddingLeft="10dip"
+            android:paddingRight="10dip"
+            android:visibility="gone"> 
 
             <EditText
                 android:id="@+id/et_search"
                 android:layout_width="0dip"
                 android:layout_height="match_parent"
-                android:layout_weight="8" 
-                />
+                android:layout_weight="8"
+                android:background="@drawable/home_search_bg" />
 
             <ImageView
                 android:id="@+id/iv_search"
@@ -32,50 +34,59 @@
 
         <ImageView
             android:layout_width="match_parent"
-            android:layout_height="150dip"
+            android:layout_height="wrap_content"
             android:scaleType="centerCrop"
-            android:src="@drawable/ic_launcher" />
+            android:src="@drawable/home_lunbo" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal" >
+            android:orientation="horizontal" 
+            android:layout_marginTop="10dip">
 
             <TextView
+                android:id="@+id/tv_wenxue"
+                style="@style/home_tab_style"
                 android:layout_width="0dip"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:drawablePadding="5dip"
-                android:drawableTop="@drawable/ic_launcher"
+                android:drawableTop="@drawable/home_wenxue"
                 android:gravity="center"
                 android:text="文学名著" />
 
             <TextView
+                android:id="@+id/tv_yule      "
                 android:layout_width="0dip"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:drawablePadding="5dip"
-                android:drawableTop="@drawable/ic_launcher"
+                android:drawableTop="@drawable/home_yule"
                 android:gravity="center"
-                android:text="娱乐" />
+                android:text="娱乐"
+                style="@style/home_tab_style" />
 
             <TextView
+                android:id="@+id/tv_lishi"
                 android:layout_width="0dip"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:drawablePadding="5dip"
-                android:drawableTop="@drawable/ic_launcher"
+                android:drawableTop="@drawable/home_lishi"
                 android:gravity="center"
-                android:text="历史" />
+                android:text="历史"
+                style="@style/home_tab_style" />
 
             <TextView
+                android:id="@+id/tv_wenhua"
                 android:layout_width="0dip"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:drawablePadding="5dip"
-                android:drawableTop="@drawable/ic_launcher"
+                android:drawableTop="@drawable/home_wenhua"
                 android:gravity="center"
-                android:text="习俗文化" />
+                android:text="习俗文化" 
+                style="@style/home_tab_style"/>
         </LinearLayout>
 
         <LinearLayout
@@ -85,40 +96,48 @@
             android:orientation="horizontal" >
 
             <TextView
+                android:id="@+id/tv_yinyue"
                 android:layout_width="0dip"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:drawablePadding="5dip"
-                android:drawableTop="@drawable/ic_launcher"
+                android:drawableTop="@drawable/home_yinyue"
                 android:gravity="center"
-                android:text="音乐" />
+                android:text="音乐"
+                style="@style/home_tab_style" />
 
             <TextView
+                android:id="@+id/tv_ertong"
                 android:layout_width="0dip"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:drawablePadding="5dip"
-                android:drawableTop="@drawable/ic_launcher"
+                android:drawableTop="@drawable/home_ertong"
                 android:gravity="center"
-                android:text="儿童" />
+                android:text="儿童" 
+                style="@style/home_tab_style"/>
 
             <TextView
+                android:id="@+id/tv_jiaoyu"
                 android:layout_width="0dip"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:drawablePadding="5dip"
-                android:drawableTop="@drawable/ic_launcher"
+                android:drawableTop="@drawable/home_jiaoyu"
                 android:gravity="center"
-                android:text="教育" />
+                android:text="教育"
+                style="@style/home_tab_style" />
 
             <TextView
+                android:id="@+id/tv_more"
                 android:layout_width="0dip"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:drawablePadding="5dip"
-                android:drawableTop="@drawable/ic_launcher"
+                android:drawableTop="@drawable/home_more"
                 android:gravity="center"
-                android:text="更多" />
+                android:text="更多" 
+                style="@style/home_tab_style"/>
         </LinearLayout>
 
         <View
@@ -126,6 +145,13 @@
             android:layout_height="0.5dip"
             android:layout_marginTop="10dip"
             android:background="#808080" />
+        <TextView android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="排行"
+            android:drawableLeft="@drawable/home_paihang"
+            android:layout_marginTop="10dip"
+            android:layout_marginLeft="10dip"
+            android:drawablePadding="10dip"/>
 
         <LinearLayout
             android:id="@+id/ll_music_type"

@@ -3,6 +3,7 @@ package com.tingshu.hasake;
 import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
+import android.view.Window;
 
 public abstract class BaseActivity extends Activity {
 
@@ -11,6 +12,7 @@ public abstract class BaseActivity extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		//requestWindowFeature(Window.FEATURE_CUSTOM_TITLE);
 		context = this;
 		setcontentView();
 		initView();

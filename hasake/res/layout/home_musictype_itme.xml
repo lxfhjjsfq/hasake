@@ -6,35 +6,59 @@
     android:orientation="vertical"
     android:padding="5dip" >
 
-    <RelativeLayout
-        android:id="@+id/rl_more"
-        android:layout_width="match_parent"
-        android:layout_height="20dip"
-        android:orientation="horizontal" >
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_gravity="left"
-            android:drawableLeft="@drawable/ic_launcher"
-            android:gravity="center_vertical"
-            android:text="音乐" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_alignParentRight="true"
-            android:text="more+" />
-    </RelativeLayout>
-
-    <GridView
-        android:id="@+id/gv_music_type"
-        android:layout_width="match_parent"
+    <LinearLayout
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="5dip"
-        android:gravity="center_horizontal"
-        android:numColumns="3" >
-    </GridView>
+        android:background="#e6eaf3"
+        android:orientation="vertical" >
+
+        <RelativeLayout
+            android:id="@+id/rl_more"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="10dip" >
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal" >
+
+                <ImageView
+                    android:id="@+id/iv_type"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_launcher" />
+
+                <TextView
+                    android:id="@+id/tv_type_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:text="音乐"
+                    android:textSize="14sp"
+                    android:textColor="@color/color_393939" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:text="more+"
+                android:textColor="@color/all_lanse" />
+        </RelativeLayout>
+
+        <GridView
+            android:id="@+id/gv_music_type"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center_horizontal"
+            android:numColumns="3" 
+            android:listSelector="#00000000">
+        </GridView>
+    </LinearLayout>
 
 </LinearLayout>

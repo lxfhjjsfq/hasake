@@ -2,6 +2,7 @@ package com.tingshu.hasake.fragment;
 
 import com.tingshu.hasake.GuanZhuActivity;
 import com.tingshu.hasake.R;
+import com.tingshu.hasake.ui.activity.FansActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -15,7 +16,7 @@ import android.widget.TextView;
 public class LeftFragment extends Fragment {
 	private View view;
 	private TextView tv_guanzhu;
-	private TextView tv_face;
+	private TextView tv_fans;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -34,6 +35,7 @@ public class LeftFragment extends Fragment {
 
 	private void initView() {
 		tv_guanzhu = (TextView) view.findViewById(R.id.tv_guanzhu);
+		tv_fans=(TextView) view.findViewById(R.id.tv_fans);
 
 	}
 
@@ -45,6 +47,15 @@ public class LeftFragment extends Fragment {
 				Intent intent = new Intent(getActivity(), GuanZhuActivity.class);
 				startActivity(intent);
 
+			}
+		});
+		tv_fans.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View arg0) {
+				Intent intent = new Intent(getActivity(), FansActivity.class);
+				startActivity(intent);
+				
 			}
 		});
 	}

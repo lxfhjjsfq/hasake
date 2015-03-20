@@ -17,25 +17,42 @@
         android:theme="@style/AppTheme" >
         <activity
             android:name="com.tingshu.hasake.MainActivity"
-            android:windowSoftInputMode="stateHidden"
-            android:label="@string/app_name" >
+            android:label="@string/app_name"
+            android:windowSoftInputMode="stateHidden" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.tingshu.hasake.ui.activity.PlayActivity" android:screenOrientation="portrait" >
-                        <!--intent-filter>
+        <activity
+            android:name="com.tingshu.hasake.ui.activity.PlayActivity"
+            android:screenOrientation="portrait" >
+
+            <!--
+            intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter-->
+            </intent-filter
+            -->
         </activity>
-        <activity android:name="com.tingshu.hasake.ui.activity.FansActivity" android:screenOrientation="portrait"/>
-        <activity android:name="com.tingshu.hasake.ui.activity.SpecialActivity" android:screenOrientation="portrait"/>
-        <activity android:name="com.tingshu.hasake.ui.activity.ZanActivity" android:screenOrientation="portrait"/>
-        <activity android:name="com.tingshu.hasake.ui.activity.HistoryActivity" android:screenOrientation="portrait"/>
+        <activity
+            android:name="com.tingshu.hasake.ui.activity.FansActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.tingshu.hasake.ui.activity.SpecialActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.tingshu.hasake.ui.activity.ZanActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.tingshu.hasake.ui.activity.HistoryActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name="com.tingshu.hasake.GuanZhuActivity" >
+        </activity>
+        <activity android:name="com.tingshu.hasake.AllMusicActivity" >
+        </activity>
     </application>
 
     <uses-permission android:name="android.permission.INTERNET" />

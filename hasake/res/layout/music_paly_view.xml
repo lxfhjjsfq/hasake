@@ -11,14 +11,14 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="10dp"
         android:layout_marginTop="10dp"
-        android:textSize="20sp"
+        android:text="一个90后的心声"
         android:textColor="#ffffffff"
-        android:text="一个90后的心声" />
-
+        android:textSize="20sp" />
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="240dp"
         android:orientation="horizontal" >
+- 
 
         <LinearLayout
             android:layout_width="0dp"
@@ -50,6 +50,7 @@
                 android:gravity="right"
                 android:text="5:25" />
         </LinearLayout>
+- 
 
         <LinearLayout
             android:layout_width="0dp"
@@ -69,8 +70,8 @@
                 android:layout_gravity="center"
                 android:drawableTop="@drawable/icon_play_special"
                 android:gravity="center_horizontal"
-                android:textColor="#7fffffff"
-                android:text="专辑" />
+                android:text="专辑"
+                android:textColor="#7fffffff" />
 
             <View
                 android:layout_width="wrap_content"
@@ -84,8 +85,8 @@
                 android:layout_gravity="center_horizontal"
                 android:drawableTop="@drawable/icon_play_zan"
                 android:gravity="center_horizontal"
-                android:textColor="#7fffffff"
-                android:text="赞" />
+                android:text="赞"
+                android:textColor="#7fffffff" />
 
             <View
                 android:layout_width="wrap_content"
@@ -99,8 +100,8 @@
                 android:layout_gravity="center_horizontal"
                 android:drawableTop="@drawable/icon_play_history"
                 android:gravity="center_horizontal"
-                android:textColor="#7fffffff"
-                android:text="播放记录" />
+                android:text="播放记录"
+                android:textColor="#7fffffff" />
 
             <View
                 android:layout_width="wrap_content"
@@ -108,12 +109,13 @@
                 android:layout_weight="1" />
         </LinearLayout>
     </LinearLayout>
+- 
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingBottom="8dip"
-        android:orientation="horizontal" >
+        android:orientation="horizontal"
+        android:paddingBottom="8dip" >
 
         <LinearLayout
             android:layout_width="0dp"
@@ -125,8 +127,8 @@
                 android:id="@+id/music_play_up"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
                 android:layout_gravity="center_vertical"
+                android:layout_weight="1"
                 android:src="@drawable/icon_play_up" />
 
             <ImageView
@@ -140,8 +142,8 @@
                 android:id="@+id/music_play_next"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
                 android:layout_gravity="center_vertical"
+                android:layout_weight="1"
                 android:src="@drawable/icon_play_next" />
         </LinearLayout>
 

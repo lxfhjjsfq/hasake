@@ -173,7 +173,7 @@ public class MediaPlayManager {
 		}
 	}
 
-	public int getProgress(){
+	public synchronized int getProgress(){
 		if (null != mediaPlayer) {
 			if(mediaPlayer.getDuration() > 0){
 				return mediaPlayer.getCurrentPosition() * 100 / mediaPlayer.getDuration();
@@ -182,7 +182,7 @@ public class MediaPlayManager {
 		return 0;
 	}
 	
-	public int getDuration(){
+	public synchronized int getDuration(){
 		if (null != mediaPlayer) {
 			return mediaPlayer.getDuration();
 		}

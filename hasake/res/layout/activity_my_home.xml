@@ -158,7 +158,7 @@
                 android:layout_height="120dip"
                 android:layout_marginLeft="10dip"
                 android:layout_marginTop="190dip"
-                android:src="@drawable/ic_launcher" />
+                android:src="@drawable/zhoujielu" />
         </RelativeLayout>
     </LinearLayout>
 

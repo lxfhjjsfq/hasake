@@ -3,14 +3,17 @@ package com.tingshu.hasake;
 import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
+import android.view.Window;
 
 public abstract class BaseActivity extends Activity {
-	public Context context;
 
+	protected Context context;
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		context=this;
+		//requestWindowFeature(Window.FEATURE_CUSTOM_TITLE);
+		context = this;
 		setcontentView();
 		initView();
 		initListener();

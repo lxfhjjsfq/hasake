@@ -53,7 +53,7 @@ public class MainActivity extends SlidingFragmentActivity {
 		sm.setBehindScrollScale(0.25f);
 		sm.setFadeDegree(0.25f);
 
-		sm.setBackgroundImage(R.drawable.img_frame_background);
+		sm.setBackgroundImage(R.drawable.home_left_bg);
 		sm.setBehindCanvasTransformer(new SlidingMenu.CanvasTransformer() {
 			@Override
 			public void transformCanvas(Canvas canvas, float percentOpen) {

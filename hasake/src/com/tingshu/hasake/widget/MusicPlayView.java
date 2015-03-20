@@ -66,6 +66,9 @@ public class MusicPlayView extends LinearLayout implements android.view.View.OnC
 		imgv_up.setOnClickListener(this);
 		imgv_now.setOnClickListener(this);
 		imgv_next.setOnClickListener(this);
+		tv_special.setOnClickListener(this);
+		tv_zan.setOnClickListener(this);
+		tv_history.setOnClickListener(this);
 	}
 	
 	public void setTitle(String title){
@@ -121,6 +124,21 @@ public class MusicPlayView extends LinearLayout implements android.view.View.OnC
 				imgv_now.getDrawable().setLevel(TO_PAUSE);
 			}
 			break;
+		case R.id.music_play_special:
+			if(mMusicClickListener != null){
+				mMusicClickListener.onMusicSpecial();
+			}
+			break;
+		case R.id.music_play_zan:
+			if(mMusicClickListener != null){
+				mMusicClickListener.onMusicZan();
+			}
+			break;
+		case R.id.music_play_history:
+			if(mMusicClickListener != null){
+				mMusicClickListener.onMusicHistory();
+			}
+			break;
 		}
 	}
 	
@@ -134,6 +152,9 @@ public class MusicPlayView extends LinearLayout implements android.view.View.OnC
 		public void onMusicPlayNext();
 		public void onMusicPlayPause();
 		public void onMusicPlayContinue();
+		public void onMusicSpecial();
+		public void onMusicZan();
+		public void onMusicHistory();
 	}
 
 }

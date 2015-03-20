@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal" >
+
+    <ImageView
+        android:layout_width="0dip"
+        android:layout_height="50dip"
+        android:layout_gravity="center_vertical"
+        android:layout_weight="1"
+        android:src="@drawable/test_play_attetion_icon" />
+
+    <LinearLayout
+        android:layout_width="0dip"
+        android:layout_height="wrap_content"
+        android:layout_weight="4"
+        android:layout_marginLeft="8dip"
+        android:orientation="vertical" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawablePadding="8dip"
+            android:drawableRight="@drawable/icon_vip"
+            android:gravity="center_vertical"
+            android:text="90后"
+            android:textColor="#ff296fcf" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="声音587"
+                android:textColor="#ff888888" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="粉丝65.5万"
+                android:textColor="#ff888888" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="90后心灵的寄托"
+            android:textColor="#ff494949" />
+    </LinearLayout>
+
+    <ImageView
+        android:layout_width="0dip"
+        android:layout_height="50dip"
+        android:layout_weight="2"
+        android:layout_gravity="center_vertical"
+        android:src="@drawable/test_attention_button" />
+
+</LinearLayout>

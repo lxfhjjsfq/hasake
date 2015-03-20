@@ -3,6 +3,7 @@ package com.tingshu.hasake;
 import com.tingshu.hasake.adapter.GuanzhuLvAdapter;
 
 import android.widget.ListView;
+import android.widget.TextView;
 
 public class GuanZhuActivity extends BaseActivity {
 
@@ -17,6 +18,9 @@ public class GuanZhuActivity extends BaseActivity {
 	@Override
 	protected void initView() {
 		lv_guanzhu = (ListView) findViewById(R.id.lv_guanzhu);
+		TextView title = (TextView)findViewById(
+				R.id.act_tiltle_text);
+		title.setText("关注");
 
 	}
 

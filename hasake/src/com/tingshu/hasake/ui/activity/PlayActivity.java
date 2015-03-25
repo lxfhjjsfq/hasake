@@ -15,6 +15,7 @@ import com.fengwei.app.media.MediaPlayManager.OnMediaPlayStateListener;
 import com.tingshu.hasake.R;
 import com.tingshu.hasake.adapter.PlayMusicGvAdapter;
 import com.tingshu.hasake.utils.DateUtil;
+import com.tingshu.hasake.utils.FileUtil;
 import com.tingshu.hasake.widget.MusicPlayView;
 import com.tingshu.hasake.widget.MusicPlayView.MusicClickListener;
 
@@ -26,9 +27,9 @@ public class PlayActivity extends Activity implements MusicClickListener, OnMedi
 	private int index = 0;
 	private String[] test_titles={"白天鹅","卡农","大漠秋凉"};
 	private String[] test_urls = {
-	"/mnt/sdcard/hasake/baitiane.mp3",
-	"/mnt/sdcard/hasake/kanon.mp3",								
-	"/mnt/sdcard/hasake/damoqiuliang.mp3"};
+	"baitiane.mp3",
+	"kanon.mp3",								
+	"damoqiuliang.mp3"};
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -42,6 +43,10 @@ public class PlayActivity extends Activity implements MusicClickListener, OnMedi
 		mMusicPlayView = (MusicPlayView) findViewById(R.id.act_play_music_view);
 		mMusicPlayView.setMusicClickListener(this);
 		MediaPlayManager.getInstance().setOnMediaPlayStateListener(this);
+		
+		for(int i = 0; i < test_urls.length; i ++){
+			test_urls[i] = FileUtil.getPath() + test_urls[i];
+		}
 	}
 
 	@Override

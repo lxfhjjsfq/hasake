@@ -18,9 +18,10 @@
             android:layout_weight="1" />
 
         <TextView
+            android:id="@+id/act_history_delete"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:drawableLeft="@drawable/icon_vip"
+            android:drawableLeft="@drawable/icon_history_delete"
             android:text="选择删除" />
 
         <View
@@ -29,9 +30,10 @@
             android:layout_weight="1" />
 
         <TextView
+            android:id="@+id/act_history_clear"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:drawableLeft="@drawable/icon_vip"
+            android:drawableLeft="@drawable/icon_history_clear_all"
             android:text="一键清空" />
 
         <View

@@ -1,40 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="horizontal" >
+    android:layout_height="100dip"
+    android:orientation="horizontal" 
+    android:padding="15dip"
+    android:background="@drawable/item_bg">
 
     <ImageView
         android:layout_width="0dip"
-        android:layout_height="60dip"
+        android:layout_height="50dip"
         android:layout_gravity="center_vertical"
         android:layout_weight="1"
-        android:src="@drawable/ic_launcher" />
+        android:layout_marginLeft="13sp"
+        android:src="@drawable/zhoujielu" />
 
     <LinearLayout
         android:layout_width="0dip"
         android:layout_height="match_parent"
         android:layout_weight="4"
-        android:layout_marginLeft="8dip"
+        android:layout_marginLeft="15dip"
         android:orientation="vertical" >
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="0dip"
-            android:layout_weight="2"
+            android:layout_weight="3"
             android:drawablePadding="8dip"
-            android:drawableLeft="@drawable/test_play_zan"
+            android:drawableLeft="@drawable/ji"
             android:gravity="top"
+            android:textColor="#393939"
             android:maxLines="2"
+            android:textSize="15sp"
             android:text="专辑系列《糗事联播-12月主播秀(2014)》"
-            android:textColor="#ff494949"
             />
 
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="0dip"
-            android:layout_marginTop="5dip"
+            android:layout_marginTop="10dip"
             android:layout_weight="1"
             android:orientation="horizontal" >
 
@@ -61,6 +65,6 @@
         android:layout_height="20dip"
         android:layout_weight="1"
         android:layout_gravity="center_vertical"
-        android:src="@drawable/test_fans_button" />
+        android:src="@drawable/ji_dele" />
 
 </LinearLayout>

@@ -14,10 +14,11 @@
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@style/AppTheme" >
+        android:theme="@style/hask_title_bar" >
         <activity
             android:name="com.tingshu.hasake.MainActivity"
             android:label="@string/app_name"
+            android:theme="@android:style/Theme.NoTitleBar"
             android:windowSoftInputMode="stateHidden" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -34,7 +35,8 @@
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter
+            </intent-filter
+
             -->
         </activity>
         <activity
@@ -49,9 +51,17 @@
         <activity
             android:name="com.tingshu.hasake.ui.activity.HistoryActivity"
             android:screenOrientation="portrait" />
-        <activity android:name="com.tingshu.hasake.GuanZhuActivity" >
+        <activity
+            android:name="com.tingshu.hasake.GuanZhuActivity"
+            android:screenOrientation="portrait" >
         </activity>
-        <activity android:name="com.tingshu.hasake.AllMusicActivity" >
+        <activity
+            android:name="com.tingshu.hasake.AllMusicActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.tingshu.hasake.MyMsgActivity"
+            android:screenOrientation="portrait" >
         </activity>
     </application>
 

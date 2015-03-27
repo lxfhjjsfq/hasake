@@ -43,29 +43,28 @@ public class HomeFragment extends Fragment implements OnClickListener {
 	}
 
 	private void initView() {
-		tv_ertong=(TextView) view.findViewById(R.id.tv_ertong);
+		tv_ertong = (TextView) view.findViewById(R.id.tv_ertong);
 		tv_ertong.setOnClickListener(this);
-		tv_jiaoyu=(TextView) view.findViewById(R.id.tv_jiaoyu);
+		tv_jiaoyu = (TextView) view.findViewById(R.id.tv_jiankang);
 		tv_jiaoyu.setOnClickListener(this);
-		tv_wenhua=(TextView) view.findViewById(R.id.tv_wenhua);
+		tv_wenhua = (TextView) view.findViewById(R.id.tv_wenhua);
 		tv_wenhua.setOnClickListener(this);
-		
-		tv_wenxue=(TextView) view.findViewById(R.id.tv_wenxue);
+
+		tv_wenxue = (TextView) view.findViewById(R.id.tv_wenxue);
 		tv_wenxue.setOnClickListener(this);
-		
-		tv_yule=(TextView) view.findViewById(R.id.tv_yule);
+
+		tv_yule = (TextView) view.findViewById(R.id.tv_yule);
 		tv_yule.setOnClickListener(this);
-		
-		tv_lishi=(TextView) view.findViewById(R.id.tv_lishi);
+
+		tv_lishi = (TextView) view.findViewById(R.id.tv_lishi);
 		tv_lishi.setOnClickListener(this);
-		
-		tv_yinyue=(TextView) view.findViewById(R.id.tv_yinyue);
+
+		tv_yinyue = (TextView) view.findViewById(R.id.tv_yinyue);
 		tv_yinyue.setOnClickListener(this);
-		
-		tv_more=(TextView) view.findViewById(R.id.tv_more);
+
+		tv_more = (TextView) view.findViewById(R.id.tv_more);
 		tv_more.setOnClickListener(this);
-		
-		
+
 		ll_music_type = (LinearLayout) view.findViewById(R.id.ll_music_type);
 		for (int i = 0; i < 3; i++) {
 			MusicTypeView musicTypeView = new MusicTypeView(getActivity());
@@ -77,9 +76,35 @@ public class HomeFragment extends Fragment implements OnClickListener {
 
 	@Override
 	public void onClick(View arg0) {
-		Intent intent=new Intent(getActivity(),AllMusicActivity.class);
+		Intent intent = new Intent(getActivity(), AllMusicActivity.class);
+		int typeId = -1;
+		switch (arg0.getId()) {
+		case R.id.tv_wenxue:
+			typeId = 0;
+			break;
+		case R.id.tv_yule:
+			typeId = 1;
+			break;
+		case R.id.tv_lishi:
+			typeId = 2;
+			break;
+
+		case R.id.tv_yinyue:
+			typeId = 3;
+			break;
+		case R.id.tv_ertong:
+			typeId = 4;
+			break;
+		case R.id.tv_jiankang:
+			typeId = 5;
+			break;
+
+		default:
+			break;
+		}
+		intent.putExtra("typeId", typeId);
 		startActivity(intent);
-		
+
 	}
 
 }

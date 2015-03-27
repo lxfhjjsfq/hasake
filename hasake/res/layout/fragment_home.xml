@@ -15,7 +15,7 @@
             android:orientation="horizontal"
             android:paddingLeft="10dip"
             android:paddingRight="10dip"
-            android:visibility="gone"> 
+            android:visibility="gone" >
 
             <EditText
                 android:id="@+id/et_search"
@@ -32,17 +32,14 @@
                 android:src="@drawable/ic_launcher" />
         </LinearLayout>
 
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:scaleType="centerCrop"
-            android:src="@drawable/home_lunbo" />
+        <include layout="@layout/banner_lunbo_layout"
+            />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal" 
-            android:layout_marginTop="10dip">
+            android:layout_marginTop="10dip"
+            android:orientation="horizontal" >
 
             <TextView
                 android:id="@+id/tv_wenxue"
@@ -57,36 +54,37 @@
 
             <TextView
                 android:id="@+id/tv_yule      "
+                style="@style/home_tab_style"
                 android:layout_width="0dip"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:drawablePadding="5dip"
                 android:drawableTop="@drawable/home_yule"
                 android:gravity="center"
-                android:text="娱乐"
-                style="@style/home_tab_style" />
+                android:text="娱乐" />
 
             <TextView
                 android:id="@+id/tv_lishi"
+                style="@style/home_tab_style"
                 android:layout_width="0dip"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:drawablePadding="5dip"
                 android:drawableTop="@drawable/home_lishi"
                 android:gravity="center"
-                android:text="历史"
-                style="@style/home_tab_style" />
+                android:text="历史人文" />
 
             <TextView
                 android:id="@+id/tv_wenhua"
+                style="@style/home_tab_style"
                 android:layout_width="0dip"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:drawablePadding="5dip"
                 android:drawableTop="@drawable/home_wenhua"
                 android:gravity="center"
-                android:text="习俗文化" 
-                style="@style/home_tab_style"/>
+                android:text="音乐"
+                 android:visibility="gone"/>
         </LinearLayout>
 
         <LinearLayout
@@ -97,47 +95,48 @@
 
             <TextView
                 android:id="@+id/tv_yinyue"
+                style="@style/home_tab_style"
                 android:layout_width="0dip"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:drawablePadding="5dip"
                 android:drawableTop="@drawable/home_yinyue"
                 android:gravity="center"
-                android:text="音乐"
-                style="@style/home_tab_style" />
+                android:text="音乐" />
 
             <TextView
                 android:id="@+id/tv_ertong"
+                style="@style/home_tab_style"
                 android:layout_width="0dip"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:drawablePadding="5dip"
                 android:drawableTop="@drawable/home_ertong"
                 android:gravity="center"
-                android:text="儿童" 
-                style="@style/home_tab_style"/>
+                android:text="儿童" />
 
             <TextView
-                android:id="@+id/tv_jiaoyu"
+                android:id="@+id/tv_jiankang"
+                style="@style/home_tab_style"
                 android:layout_width="0dip"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:drawablePadding="5dip"
                 android:drawableTop="@drawable/home_jiaoyu"
                 android:gravity="center"
-                android:text="教育"
-                style="@style/home_tab_style" />
+                android:text="健康养生" />
 
             <TextView
                 android:id="@+id/tv_more"
+                style="@style/home_tab_style"
                 android:layout_width="0dip"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:drawablePadding="5dip"
                 android:drawableTop="@drawable/home_more"
                 android:gravity="center"
-                android:text="更多" 
-                style="@style/home_tab_style"/>
+                android:text="更多"
+                android:visibility="gone"/>
         </LinearLayout>
 
         <View
@@ -145,13 +144,15 @@
             android:layout_height="0.5dip"
             android:layout_marginTop="10dip"
             android:background="#808080" />
-        <TextView android:layout_width="wrap_content"
+
+        <TextView
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="排行"
-            android:drawableLeft="@drawable/home_paihang"
-            android:layout_marginTop="10dip"
             android:layout_marginLeft="10dip"
-            android:drawablePadding="10dip"/>
+            android:layout_marginTop="10dip"
+            android:drawableLeft="@drawable/home_paihang"
+            android:drawablePadding="10dip"
+            android:text="排行" />
 
         <LinearLayout
             android:id="@+id/ll_music_type"

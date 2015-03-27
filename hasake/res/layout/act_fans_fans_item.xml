@@ -1,64 +1,102 @@
-<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:orientation="horizontal" >
+    android:gravity="center"
+    android:orientation="horizontal"
+    android:paddingLeft="15dip" 
+    android:background="@drawable/item_bg">
 
-    <ImageView
-        android:layout_width="0dip"
-        android:layout_height="50dip"
-        android:layout_gravity="center_vertical"
-        android:layout_weight="1"
-        android:src="@drawable/ic_launcher" />
-
-    <LinearLayout
-        android:layout_width="0dip"
-        android:layout_height="wrap_content"
-        android:layout_weight="4"
-        android:layout_marginLeft="8dip"
-        android:orientation="vertical" >
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:drawablePadding="8dip"
-            android:drawableRight="@drawable/icon_vip"
-            android:gravity="center_vertical"
-            android:text="90后"
-            android:textColor="#ff494949"
-            />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="90dip" 
+        >
 
         <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal" >
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="声音587"
-                android:textColor="#ff888888" />
+            <ImageView
+                android:layout_width="50dip"
+                android:layout_height="50dip"
+                android:src="@drawable/zhoujielu"
+                android:layout_gravity="center_vertical" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="粉丝65.5万"
-                android:textColor="#ff888888" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dip"
+                android:gravity="center_vertical"
+                android:orientation="vertical" >
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="周杰伦"
+                        android:textSize="15sp"
+                        android:textColor="#393939" />
+
+                    <ImageView
+                        android:layout_width="20dip"
+                        android:layout_height="20dip"
+                        android:layout_marginLeft="5dip"
+                        android:src="@drawable/my_home_v" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dip"
+                    android:gravity="center"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="声音985" 
+                        android:textSize="13sp"
+                        android:textColor="#888888"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dip"
+                        android:text="粉丝 42.6万" 
+                        android:textSize="13sp"
+                        android:textColor="#888888"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dip"
+                    android:gravity="center"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="声音985" 
+                        android:textColor="#2b7bbd"
+                        android:textSize="13sp"/>
+                </LinearLayout>
+            </LinearLayout>
         </LinearLayout>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="90后心灵的寄托"
-            android:textColor="#ff296fcf"  />
-    </LinearLayout>
-
-    <ImageView
-        android:id="@+id/act_fans_fans_item_button"
-        android:layout_width="0dip"
-        android:layout_height="20dip"
-        android:layout_weight="2"
-        android:layout_gravity="center_vertical"
-        android:src="@drawable/test_fans_button" />
+        <ImageView
+            android:id="@+id/act_fans_fans_item_button"
+            android:layout_width="30dip"
+            android:layout_height="30dip"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="20dip"
+            android:src="@drawable/test_fans_button" />
+    </RelativeLayout>
 
 </LinearLayout>

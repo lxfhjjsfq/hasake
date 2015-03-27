@@ -4,17 +4,20 @@ import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
 import android.view.Window;
+import android.widget.TextView;
 
 public abstract class BaseActivity extends Activity {
 
 	protected Context context;
-	
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		//requestWindowFeature(Window.FEATURE_CUSTOM_TITLE);
+		requestWindowFeature(Window.FEATURE_CUSTOM_TITLE);
 		context = this;
 		setcontentView();
+		getWindow().setFeatureInt(Window.FEATURE_CUSTOM_TITLE,
+				R.layout.activity_title_view);
 		initView();
 		initListener();
 		initData();
@@ -58,6 +61,11 @@ public abstract class BaseActivity extends Activity {
 	@Override
 	protected void onDestroy() {
 		super.onDestroy();
+	}
+
+	public void setTitleContent(String title) {
+		TextView tv_title = (TextView) findViewById(R.id.act_tiltle_text);
+		tv_title.setText(title);
 	}
 
 }

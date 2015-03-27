@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.util.Log;
+import android.view.Window;
 import android.widget.GridView;
 import android.widget.ListView;
 import android.widget.Toast;
@@ -15,6 +16,7 @@ import com.fengwei.app.media.MediaPlayManager.OnMediaPlayStateListener;
 import com.tingshu.hasake.R;
 import com.tingshu.hasake.adapter.PlayMusicGvAdapter;
 import com.tingshu.hasake.utils.DateUtil;
+import com.tingshu.hasake.utils.FileUtil;
 import com.tingshu.hasake.widget.MusicPlayView;
 import com.tingshu.hasake.widget.MusicPlayView.MusicClickListener;
 
@@ -26,13 +28,13 @@ public class PlayActivity extends Activity implements MusicClickListener, OnMedi
 	private int index = 0;
 	private String[] test_titles={"白天鹅","卡农","大漠秋凉"};
 	private String[] test_urls = {
-	"/mnt/sdcard/hasake/baitiane.mp3",
-	"/mnt/sdcard/hasake/kanon.mp3",								
-	"/mnt/sdcard/hasake/damoqiuliang.mp3"};
+	"baitiane.mp3",
+	"kanon.mp3",								
+	"damoqiuliang.mp3"};
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		
+		requestWindowFeature(Window.FEATURE_NO_TITLE);//去掉标题栏
 		setContentView(R.layout.activity_play);
 		mMusicPlayView = (MusicPlayView) findViewById(R.id.act_play_music_view);
 		
@@ -42,6 +44,10 @@ public class PlayActivity extends Activity implements MusicClickListener, OnMedi
 		mMusicPlayView = (MusicPlayView) findViewById(R.id.act_play_music_view);
 		mMusicPlayView.setMusicClickListener(this);
 		MediaPlayManager.getInstance().setOnMediaPlayStateListener(this);
+		
+		for(int i = 0; i < test_urls.length; i ++){
+			test_urls[i] = FileUtil.getPath() + test_urls[i];
+		}
 	}
 
 	@Override
@@ -110,10 +116,7 @@ public class PlayActivity extends Activity implements MusicClickListener, OnMedi
 	@Override
 	public void onPlayComplete(String playUrl) {
 		Toast.makeText(this, "onPlayComplete", Toast.LENGTH_SHORT).show();
-		if(mThread!=null){
-			mThread.stopPlay();
-		}
-		
+		mThread.stopPlay();
 	}
 
 	@Override

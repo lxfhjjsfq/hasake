@@ -18,8 +18,7 @@ public class GuanZhuActivity extends BaseActivity {
 	@Override
 	protected void initView() {
 		lv_guanzhu = (ListView) findViewById(R.id.lv_guanzhu);
-		TextView title = (TextView)findViewById(
-				R.id.act_tiltle_text);
+		TextView title = (TextView) findViewById(R.id.act_tiltle_text);
 		title.setText("关注");
 
 	}

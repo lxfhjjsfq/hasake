@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.util.Log;
+import android.view.Window;
 import android.widget.GridView;
 import android.widget.ListView;
 import android.widget.Toast;
@@ -33,7 +34,7 @@ public class PlayActivity extends Activity implements MusicClickListener, OnMedi
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		
+		requestWindowFeature(Window.FEATURE_NO_TITLE);//去掉标题栏
 		setContentView(R.layout.activity_play);
 		mMusicPlayView = (MusicPlayView) findViewById(R.id.act_play_music_view);
 		

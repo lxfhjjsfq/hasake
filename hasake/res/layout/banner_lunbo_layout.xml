@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.tingshu.hasake.widget.BannerLunBoView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="170dip" >
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/viewPager"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <RadioGroup
+        android:id="@+id/rg_banner_bottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:orientation="horizontal"
+        android:layout_marginBottom="10dip"
+        android:layout_marginRight="10dip" >
+
+        <RadioButton
+            android:id="@+id/rb1"
+            style="@style/banner_point"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true" 
+            android:layout_marginRight="5dip"/>
+
+        <RadioButton
+            android:id="@+id/rb2"
+            style="@style/banner_point"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" 
+            android:layout_marginRight="5dip"/>
+
+        <RadioButton
+            android:id="@+id/rb3"
+            style="@style/banner_point"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="5dip" />
+
+        <RadioButton
+            android:id="@+id/rb4"
+            style="@style/banner_point"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="5dip" />
+    </RadioGroup>
+
+</com.tingshu.hasake.widget.BannerLunBoView>

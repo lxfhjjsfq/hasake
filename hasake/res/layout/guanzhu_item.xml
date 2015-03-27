@@ -4,27 +4,30 @@
     android:layout_height="wrap_content"
     android:gravity="center"
     android:orientation="horizontal"
-    android:paddingLeft="10dip" >
+    android:paddingLeft="15dip" 
+    android:background="@drawable/item_bg">
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="100dip" >
+        android:layout_height="90dip" 
+        >
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent" >
 
             <ImageView
-                android:layout_width="100dip"
-                android:layout_height="100dip"
-                android:src="@drawable/zhoujielu" />
+                android:layout_width="50dip"
+                android:layout_height="50dip"
+                android:src="@drawable/zhoujielu"
+                android:layout_gravity="center_vertical" />
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_marginLeft="10dip"
                 android:gravity="center_vertical"
-                android:orientation="vertical"
-                android:layout_marginLeft="10dip" >
+                android:orientation="vertical" >
 
                 <LinearLayout
                     android:layout_width="wrap_content"
@@ -35,13 +38,15 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="周杰伦" />
+                        android:text="周杰伦"
+                        android:textSize="15sp"
+                        android:textColor="#393939" />
 
                     <ImageView
                         android:layout_width="20dip"
                         android:layout_height="20dip"
                         android:layout_marginLeft="5dip"
-                        android:src="@drawable/ic_launcher" />
+                        android:src="@drawable/my_home_v" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -54,13 +59,17 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="声音985" />
+                        android:text="声音985" 
+                        android:textSize="13sp"
+                        android:textColor="#888888"/>
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="10dip"
-                        android:text="粉丝 42.6万" />
+                        android:text="粉丝 42.6万" 
+                        android:textSize="13sp"
+                        android:textColor="#888888"/>
                 </LinearLayout>
 
                 <LinearLayout
@@ -73,7 +82,9 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="声音985" />
+                        android:text="声音985" 
+                        android:textColor="#2b7bbd"
+                        android:textSize="13sp"/>
                 </LinearLayout>
             </LinearLayout>
         </LinearLayout>
@@ -83,8 +94,8 @@
             android:layout_height="30dip"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
-            android:layout_marginLeft="10dip"
-            android:src="@drawable/ic_launcher" />
+            android:layout_marginRight="20dip"
+            android:src="@drawable/guanzhu_msg" />
     </RelativeLayout>
 
 </LinearLayout>

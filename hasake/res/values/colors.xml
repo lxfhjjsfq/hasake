@@ -1,9 +1,12 @@
 <resources>
 
-    <color name="progress_background">#ffff0000</color>
-    <color name="progress_progress">#ffa2e028</color>
-    <color name="all_lanse">#276ed3</color>
-    <color name="color_393939">#393939</color>
-    <color name="color_ffffff">#ffffff</color>
+    <color name="progress_background">#ffff0000</color> 
+  <color name="progress_progress">#ffa2e028</color> 
+  <color name="all_lanse">#276ed3</color> 
+  <color name="color_393939">#393939</color> 
+  <color name="color_ffffff">#ffffff</color> 
+  <color name="color_7f7f7f">#7f7f7f</color> 
+  <color name="color_ecf0fa">#ecf0fa</color> 
+
 
 </resources>

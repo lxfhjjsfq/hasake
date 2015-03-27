@@ -8,6 +8,7 @@ import java.io.OutputStream;
 
 import android.graphics.Canvas;
 import android.os.Bundle;
+import android.view.Window;
 
 import com.jeremyfeinstein.slidingmenu.lib.SlidingMenu;
 import com.jeremyfeinstein.slidingmenu.lib.app.SlidingFragmentActivity;
@@ -21,6 +22,7 @@ public class MainActivity extends SlidingFragmentActivity {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		requestWindowFeature(Window.FEATURE_NO_TITLE);//去掉标题栏
 		setContentView(R.layout.activity_main);
 		initView();
 		initListener();
@@ -34,7 +36,7 @@ public class MainActivity extends SlidingFragmentActivity {
 	}
 
 	private void initData() {
-		if(!fileExist()){
+		if (!fileExist()) {
 			addFileToPath();
 		}
 	}
@@ -82,33 +84,32 @@ public class MainActivity extends SlidingFragmentActivity {
 
 	}
 
-	/*************************测试代码****************************/
-	private boolean fileExist(){
+	/************************* 测试代码 ****************************/
+	private boolean fileExist() {
 		File file = new File(FileUtil.getPath() + "damoqiuliang.mp3");
-		if(file.exists()){
+		if (file.exists()) {
 			return true;
 		}
 		return false;
 	}
-	private void addFileToPath(){
-		//将assets中的音乐拷贝到手机
+
+	private void addFileToPath() {
+		// 将assets中的音乐拷贝到手机
 		AddFileThread thread = new AddFileThread();
 		thread.start();
 	}
-	
-	class AddFileThread extends Thread{
+
+	class AddFileThread extends Thread {
 		@Override
 		public void run() {
 			File dir = new File(FileUtil.getPath());
-			if(!dir.exists()){
+			if (!dir.exists()) {
 				dir.mkdir();
 			}
 			addFile("baitiane.mp3");
 			addFile("kanon.mp3");
 			addFile("damoqiuliang.mp3");
 		}
-		
-		
 		private void addFile(String fileName) {
 			InputStream fio = null;
 			OutputStream fos = null;
@@ -120,32 +121,33 @@ public class MainActivity extends SlidingFragmentActivity {
 			} catch (Exception e) {
 				e.printStackTrace();
 			} finally {
-				if (fio != null) try {
-					fio.close();
-				} catch (Exception e) {
-				}
-				if (fos != null) try {
-					fos.close();
-				} catch (Exception e) {
-				}
+				if (fio != null)
+					try {
+						fio.close();
+					} catch (Exception e) {
+					}
+				if (fos != null)
+					try {
+						fos.close();
+					} catch (Exception e) {
+					}
 			}
 		}
-		
-		
+
 		private long copy(InputStream from, OutputStream to) throws IOException {
 			byte[] buf = new byte[4096];
 			long total = 0L;
-			
-			while(true) {
+
+			while (true) {
 				int r = from.read(buf);
-				if(r == -1) {
+				if (r == -1) {
 					return total;
 				}
-				
+
 				to.write(buf, 0, r);
-				total += (long)r;
+				total += (long) r;
 			}
 		}
 	}
-	
+
 }

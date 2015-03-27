@@ -4,16 +4,18 @@
     android:layout_height="wrap_content"
     android:gravity="center"
     android:orientation="vertical"
-    android:paddingLeft="5dip" 
-    android:paddingRight="5dip"
-    android:paddingBottom="5dip">
+   	android:padding="5dip"
+    android:background="@drawable/all_item_bg">
 
     <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/iv_type_icon"
+        android:layout_width="100dip"
+        android:layout_height="100dip"
+        android:scaleType="centerCrop"
         android:src="@drawable/zhoujielu" />
 
     <TextView
+        android:id="@+id/tv_type_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dip"

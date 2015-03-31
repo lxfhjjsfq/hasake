@@ -13,7 +13,7 @@ import com.lidroid.xutils.http.client.HttpRequest.HttpMethod;
 
 public class HaskHttpUtils {
 
-	public static void sendGet(String url, Map<String, String> parms,
+	public static void sendGet(String url, Map<String, Object> parms,
 			final HttpRequestCallBack callBack) {
 		try {
 
@@ -22,9 +22,9 @@ public class HaskHttpUtils {
 			sb.append('?');
 			// ?method=save&title=12345678&timelength=26&
 			// 迭代Map拼接请求参数
-			for (Map.Entry<String, String> entry : parms.entrySet()) {
+			for (Map.Entry<String, Object> entry : parms.entrySet()) {
 				sb.append(entry.getKey()).append('=')
-						.append(URLEncoder.encode(entry.getValue(), "UTF-8"))
+						.append(URLEncoder.encode(entry.getValue().toString(), "UTF-8"))
 						.append('&');
 			}
 			sb.deleteCharAt(sb.length() - 1);// 删除最后一个"&"

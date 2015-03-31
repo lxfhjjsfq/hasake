@@ -59,7 +59,7 @@ public class RegistActivity extends BaseActivity {
 	}
 
 	private void regist(String name, String pwd) {
-		Map<String, String> parms = new HashMap<String, String>();
+		Map<String, Object> parms = new HashMap<String, Object>();
 		parms.put("Phone", name);
 		parms.put("Password", pwd);
 		parms.put("NickName", "sjw");

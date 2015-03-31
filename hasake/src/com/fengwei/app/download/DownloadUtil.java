@@ -15,7 +15,7 @@ public class DownloadUtil {
 
 	private static final String SDCARD_ROOT = Environment
 			.getExternalStorageDirectory().getAbsolutePath() + "/";
-	public static final String FILE_ROOT = SDCARD_ROOT + "utv/";
+	public static final String FILE_ROOT = SDCARD_ROOT + "hasake/";
 
 	public static String getFileNameFromUrl(String url) {
 

@@ -12,7 +12,7 @@ public class UDownloadManager implements DownloadInterface {
 
 	private final String TAG = "UDownloadManager";
 	
-	public static final String DOWN_RECEIVER_ACTION = "com.changlian.utv.downloader.receiver";
+	public static final String DOWN_RECEIVER_ACTION = "com.tingshu.hasake.downloader.receiver";
 	public static final String DOWN_RECEIVER_KEY = "download";
 	
 	/**

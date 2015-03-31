@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <EditText
+        android:id="@+id/et_name"
+        android:layout_width="fill_parent"
+        android:layout_height="50dip"
+        android:hint="请输入用户名"
+        android:text="123456" />
+
+    <EditText
+        android:id="@+id/et_pwd"
+        android:layout_width="fill_parent"
+        android:layout_height="50dip"
+        android:layout_marginTop="20dip"
+        android:hint="请输入密码" 
+        android:text="123456"/>
+
+    <Button
+        android:id="@+id/btn_login"
+        android:layout_width="fill_parent"
+        android:layout_height="50dip"
+        android:text="登录" 
+        android:layout_marginTop="20dip"/>
+
+</LinearLayout>

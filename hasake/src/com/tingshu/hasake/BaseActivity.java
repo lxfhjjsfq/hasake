@@ -3,8 +3,10 @@ package com.tingshu.hasake;
 import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Window;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public abstract class BaseActivity extends Activity {
 
@@ -66,6 +68,14 @@ public abstract class BaseActivity extends Activity {
 	public void setTitleContent(String title) {
 		TextView tv_title = (TextView) findViewById(R.id.act_tiltle_text);
 		tv_title.setText(title);
+	}
+
+	public void toast(String content) {
+		Toast.makeText(context, content, Toast.LENGTH_SHORT).show();
+	}
+
+	public void log(String content) {
+		Log.d("hask", content);
 	}
 
 }

@@ -1,5 +1,6 @@
 package com.tingshu.hasake;
 
+import com.tingshu.hasake.database.DatabaseUtil;
 import com.tingshu.hasake.utils.SfpUtils;
 
 import android.app.Application;
@@ -8,6 +9,10 @@ public class HaskApplication extends Application {
 	@Override
 	public void onCreate() {
 		super.onCreate();
+		
+		//初始化数据库
+		DatabaseUtil.initDatabase(this);
+		
 	}
 
 	public boolean isLogin() {

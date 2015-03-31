@@ -46,6 +46,9 @@
             android:name="com.tingshu.hasake.ui.activity.HistoryActivity"
             android:screenOrientation="portrait" />
         <activity
+            android:name="com.tingshu.hasake.ui.activity.MusicDownloadActivity"
+            android:screenOrientation="portrait" />
+        <activity
             android:name="com.tingshu.hasake.GuanZhuActivity"
             android:screenOrientation="portrait" >
         </activity>

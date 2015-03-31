@@ -15,6 +15,14 @@ public class DownloadDao {
 	
 	
 	
+	public DownloadDao(String album, String name, String pic, String downUrl) {
+		super();
+		this.album = album;
+		this.name = name;
+		this.pic = pic;
+		this.downUrl = downUrl;
+	}
+
 	public DownloadDao(int id, String album, String kind, String name,
 			String pic, String downUrl, String path, String state,
 			long curLength, long totalLength) {

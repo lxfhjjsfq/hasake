@@ -20,11 +20,6 @@
             android:label="@string/app_name"
             android:theme="@android:style/Theme.NoTitleBar"
             android:windowSoftInputMode="stateHidden" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name="com.tingshu.hasake.ui.activity.PlayActivity"
@@ -35,8 +30,7 @@
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter
-
+            </intent-filter
             -->
         </activity>
         <activity
@@ -62,6 +56,15 @@
         <activity
             android:name="com.tingshu.hasake.MyMsgActivity"
             android:screenOrientation="portrait" >
+        </activity>
+        <activity android:name="com.tingshu.hasake.RegistActivity" >
+        </activity>
+        <activity android:name="com.tingshu.hasake.LoginActivity" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
     </application>
 

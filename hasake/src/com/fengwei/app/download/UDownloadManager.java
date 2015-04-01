@@ -52,6 +52,8 @@ public class UDownloadManager implements DownloadInterface {
 			Message msg = sendBrocaseHandler.obtainMessage();
 			msg.obj = downBean;
 			sendBrocaseHandler.sendMessage(msg);
+			
+			//---------可以直接用callback来替换----------
 		}
 
 		public void finish(DownloadBean downBean) {
@@ -66,6 +68,8 @@ public class UDownloadManager implements DownloadInterface {
 
 			// 检查是否有可以下载的任务
 			// checkDownloadQueue();
+			
+			//------------可以直接用callback来替换---------
 		}
 	};
 

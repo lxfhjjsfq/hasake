@@ -12,7 +12,8 @@ import com.tingshu.hasake.database.DownloadDao;
 
 public class HDownloadManager{
 	
-	private static HttpHandler mHttpHandler;
+	private static HttpHandler<?> mHttpHandler;
+	private static DownloadDao mDownloadDao;
 	
 	public static void startDown(DownloadDao dao){
 		
@@ -20,14 +21,41 @@ public class HDownloadManager{
 		if(mHttpHandler != null){
 			mHttpHandler.pause();
 			mHttpHandler = null;
+			mDownloadDao = null;
 		}
 		
 		//获取路径
 		String target = HDownloadUtil.getFileNameFromUrl(dao.getDownUrl());
 		dao.setPath(target);
+		mDownloadDao = dao;
 		//开始下载任务
 		HttpUtils httpUtils = new HttpUtils();
-		mHttpHandler = httpUtils.download(dao.getDownUrl(), target, true, null);
+		mHttpHandler = httpUtils.download(dao.getDownUrl(), target, true, new RequestCallBack<File>() {
+			public void onStart() {
+				if(mDownCallback != null){
+					mDownCallback.onStart();
+				}
+			}
+			public void onLoading(long total, long current, boolean isUploading) {
+				mDownloadDao.setCurLength(current);
+				mDownloadDao.setTotalLength(total);
+				if(mDownCallback != null){
+					mDownCallback.onLoading(total, current);
+				}
+			}
+			public void onSuccess(ResponseInfo<File> arg0) {
+				//更新数据库
+				if(mDownCallback != null){
+					mDownCallback.onSuccess();
+				}
+			}
+			public void onFailure(HttpException arg0, String arg1) {
+				//更新数据库
+				if(mDownCallback != null){
+					mDownCallback.onFailure();
+				}
+			}
+		});
 		
 		//设置DownloadDao
 		
@@ -43,27 +71,14 @@ public class HDownloadManager{
 		}
 	}
 	
-	class HDownCallback extends RequestCallBack<File>{
-
-		@Override
-		public void onStart() {
-			super.onStart();
-		}
-		
-		@Override
-		public void onLoading(long total, long current, boolean isUploading) {
-			super.onLoading(total, current, isUploading);
-		}
-		
-		@Override
-		public void onFailure(HttpException arg0, String arg1) {
-			
-		}
-
-		@Override
-		public void onSuccess(ResponseInfo arg0) {
-			
-		}
-		
+	public void setDownCallback(DownCallback callback){
+		mDownCallback = callback;
+	}
+	private static DownCallback mDownCallback;
+	public interface DownCallback{
+		public void onStart();
+		public void onLoading(long total, long current);
+		public void onSuccess();
+		public void onFailure();
 	}
 }

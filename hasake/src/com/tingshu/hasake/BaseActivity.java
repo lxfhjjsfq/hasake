@@ -3,20 +3,23 @@ package com.tingshu.hasake;
 import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
+import android.support.v4.app.FragmentActivity;
 import android.util.Log;
 import android.view.Window;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public abstract class BaseActivity extends Activity {
+public abstract class BaseActivity extends FragmentActivity {
 
 	protected Context context;
+	protected HaskApplication application;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		requestWindowFeature(Window.FEATURE_CUSTOM_TITLE);
 		context = this;
+		application=(HaskApplication) getApplication();
 		setcontentView();
 		getWindow().setFeatureInt(Window.FEATURE_CUSTOM_TITLE,
 				R.layout.activity_title_view);
@@ -76,6 +79,10 @@ public abstract class BaseActivity extends Activity {
 
 	public void log(String content) {
 		Log.d("hask", content);
+	}
+	
+	public void getNetData(){
+		
 	}
 
 }

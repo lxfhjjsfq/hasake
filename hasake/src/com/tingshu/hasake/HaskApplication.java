@@ -18,4 +18,8 @@ public class HaskApplication extends Application {
 	public boolean isLogin() {
 		return SfpUtils.getIntDataToSp(this, SfpUtils.USER_ID, -1) != -1;
 	}
+
+	public int getUserId() {
+		return SfpUtils.getIntDataToSp(this, SfpUtils.USER_ID, -1);
+	}
 }

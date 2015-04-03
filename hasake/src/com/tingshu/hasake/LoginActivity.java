@@ -1,26 +1,6 @@
 package com.tingshu.hasake;
 
-import java.net.URLEncoder;
 import java.util.HashMap;
-import java.util.Map;
-
-import org.apache.http.NameValuePair;
-import org.apache.http.entity.StringEntity;
-
-import com.alibaba.fastjson.JSON;
-import com.alibaba.fastjson.JSONObject;
-import com.fengwei.app.http.HaskHttpUtils;
-import com.fengwei.app.http.HaskHttpUtils.HttpRequestCallBack;
-import com.lidroid.xutils.HttpUtils;
-import com.lidroid.xutils.exception.HttpException;
-import com.lidroid.xutils.http.RequestParams;
-import com.lidroid.xutils.http.ResponseInfo;
-import com.lidroid.xutils.http.callback.RequestCallBack;
-import com.lidroid.xutils.http.client.HttpRequest.HttpMethod;
-import com.tingshu.hasake.bean.RequestLoginBean;
-import com.tingshu.hasake.bean.UserBean;
-import com.tingshu.hasake.utils.Constans;
-import com.tingshu.hasake.utils.SfpUtils;
 
 import android.content.Intent;
 import android.text.TextUtils;
@@ -28,6 +8,14 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
+
+import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONObject;
+import com.fengwei.app.http.HaskHttpUtils;
+import com.fengwei.app.http.HaskHttpUtils.HttpRequestCallBack;
+import com.tingshu.hasake.bean.UserBean;
+import com.tingshu.hasake.utils.Constans;
+import com.tingshu.hasake.utils.SfpUtils;
 
 public class LoginActivity extends BaseActivity {
 	private EditText et_name;
@@ -45,8 +33,7 @@ public class LoginActivity extends BaseActivity {
 		et_name = (EditText) findViewById(R.id.et_name);
 		et_pwd = (EditText) findViewById(R.id.et_pwd);
 		btn_login = (Button) findViewById(R.id.btn_login);
-//		setTitleContent(getResources().getString(R.string.title_denglu));
-		setTitleContent("登录");
+		setTitleContent(getResources().getString(R.string.title_denglu));
 	}
 
 	@Override

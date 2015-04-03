@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" 
+    android:background="@drawable/pinglun_bg">
+
+    <RadioGroup
+        android:id="@+id/rg_pl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/tab_up"
+        android:orientation="horizontal"
+        android:gravity="center_vertical" >
+
+        <RadioButton
+            android:id="@+id/rb_rece"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="15dip"
+            android:layout_weight="1"
+            android:button="@null"
+            android:gravity="right|center_vertical"
+            android:text="收到的评论"
+            android:textColor="#ffffff"
+            android:textSize="17sp" />
+
+        <RadioButton
+            android:id="@+id/rb_send"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dip"
+            android:layout_weight="1"
+            android:button="@null"
+            android:gravity="left|center_vertical"
+            android:text="发出的评论"
+            android:textColor="#ffffff"
+            android:textSize="17sp" />
+    </RadioGroup>
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/vp_pinglun"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:flipInterval="30"
+        android:persistentDrawingCache="animation" />
+
+</LinearLayout>

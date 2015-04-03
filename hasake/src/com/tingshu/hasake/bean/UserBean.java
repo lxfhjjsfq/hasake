@@ -7,6 +7,13 @@ public class UserBean {
 	private String nickName;
 	private String Email;
 	private String Phone;
+	private String Sex;
+	public String getSex() {
+		return Sex;
+	}
+	public void setSex(String sex) {
+		Sex = sex;
+	}
 	public int getId() {
 		return id;
 	}

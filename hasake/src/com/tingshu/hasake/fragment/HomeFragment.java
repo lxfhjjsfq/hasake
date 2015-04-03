@@ -10,7 +10,7 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.tingshu.hasake.AllMusicActivity;
+import com.tingshu.hasake.AllMusicTypeActivity;
 import com.tingshu.hasake.R;
 import com.tingshu.hasake.widget.MusicTypeView;
 
@@ -76,7 +76,7 @@ public class HomeFragment extends Fragment implements OnClickListener {
 
 	@Override
 	public void onClick(View arg0) {
-		Intent intent = new Intent(getActivity(), AllMusicActivity.class);
+		Intent intent = new Intent(getActivity(), AllMusicTypeActivity.class);
 		int typeId = -1;
 		switch (arg0.getId()) {
 		case R.id.tv_wenxue:

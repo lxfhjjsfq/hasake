@@ -1,22 +1,15 @@
 package com.fengwei.app.download;
 
-
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
-import android.os.Environment;
+public class HDownloadUtil {
 
-/**
- * 下载工具类，主要获取下载路径
- * @author lxf
- *
- */
-public class DownloadUtil {
-
-	private static final String SDCARD_ROOT = Environment
-			.getExternalStorageDirectory().getAbsolutePath() + "/";
-	public static final String FILE_ROOT = SDCARD_ROOT + "hasake/";
-
+	/**
+	 * 获取文件名
+	 * @param url
+	 * @return
+	 */
 	public static String getFileNameFromUrl(String url) {
 
 		String extName = "";

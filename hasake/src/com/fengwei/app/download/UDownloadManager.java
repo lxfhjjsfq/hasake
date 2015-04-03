@@ -12,7 +12,7 @@ public class UDownloadManager implements DownloadInterface {
 
 	private final String TAG = "UDownloadManager";
 	
-	public static final String DOWN_RECEIVER_ACTION = "com.changlian.utv.downloader.receiver";
+	public static final String DOWN_RECEIVER_ACTION = "com.tingshu.hasake.downloader.receiver";
 	public static final String DOWN_RECEIVER_KEY = "download";
 	
 	/**
@@ -52,6 +52,8 @@ public class UDownloadManager implements DownloadInterface {
 			Message msg = sendBrocaseHandler.obtainMessage();
 			msg.obj = downBean;
 			sendBrocaseHandler.sendMessage(msg);
+			
+			//---------可以直接用callback来替换----------
 		}
 
 		public void finish(DownloadBean downBean) {
@@ -66,6 +68,8 @@ public class UDownloadManager implements DownloadInterface {
 
 			// 检查是否有可以下载的任务
 			// checkDownloadQueue();
+			
+			//------------可以直接用callback来替换---------
 		}
 	};
 

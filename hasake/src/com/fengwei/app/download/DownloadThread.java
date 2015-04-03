@@ -20,7 +20,7 @@ public class DownloadThread extends Thread {
 	private boolean isPause = false;
 	private boolean isWait = false;
 	private boolean isFinish = false;
-	private final int BUFFER = 1024;
+	private final int BUFFER = 4096;
 
 	public DownloadThread(DownloadBean downBean) {
 		super();

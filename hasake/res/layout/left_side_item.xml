@@ -231,6 +231,7 @@
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text="评论"
+                android:id="@+id/tv_pinglun"
                 android:textColor="@color/color_ffffff"
                 android:textSize="14sp" />
 

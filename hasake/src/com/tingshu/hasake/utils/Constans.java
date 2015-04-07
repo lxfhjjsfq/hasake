@@ -18,4 +18,6 @@ public class Constans {
 
 	public static final String GetMySubscription = IP+ "/api/user/GetMySubscription";
 	public static final String DelSubscription =IP+ "/api/user/DelSubscription";
+	
+	public static final String AddAlbum =IP+ "/api/Album/AddAlbum";
 }

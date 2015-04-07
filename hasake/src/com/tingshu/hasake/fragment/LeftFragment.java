@@ -4,6 +4,7 @@ import com.tingshu.hasake.GuanZhuActivity;
 import com.tingshu.hasake.MyMsgActivity;
 import com.tingshu.hasake.PingLunActvity;
 import com.tingshu.hasake.R;
+import com.tingshu.hasake.ui.activity.AlbumCreateActivity;
 import com.tingshu.hasake.ui.activity.FansActivity;
 import com.tingshu.hasake.ui.activity.HistoryActivity;
 import com.tingshu.hasake.ui.activity.SpecialActivity;
@@ -16,6 +17,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 public class LeftFragment extends Fragment implements OnClickListener {
@@ -27,6 +29,8 @@ public class LeftFragment extends Fragment implements OnClickListener {
 	private TextView tv_bofang_jilu;
 	private TextView tv_dingyue;
 	private TextView tv_pinglun;
+	
+	private Button bt_create;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -54,12 +58,14 @@ public class LeftFragment extends Fragment implements OnClickListener {
 		tv_pinglun = (TextView) view.findViewById(R.id.tv_pinglun);
 		tv_pinglun.setOnClickListener(this);
 
+		bt_create = (Button) view.findViewById(R.id.bt_create);
 	}
 
 	private void initListener() {
 		tv_zan.setOnClickListener(this);
 		tv_msg.setOnClickListener(this);
 		tv_bofang_jilu.setOnClickListener(this);
+		bt_create.setOnClickListener(this);
 		tv_guanzhu.setOnClickListener(new OnClickListener() {
 
 			@Override
@@ -104,6 +110,11 @@ public class LeftFragment extends Fragment implements OnClickListener {
 			Intent pinglunIntent = new Intent(getActivity(),
 					PingLunActvity.class);
 			startActivity(pinglunIntent);
+			break;
+		case R.id.bt_create:
+			Intent createIntent = new Intent(getActivity(),
+					AlbumCreateActivity.class);
+			startActivity(createIntent);
 			break;
 		default:
 			break;

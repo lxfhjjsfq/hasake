@@ -11,7 +11,7 @@ public class HaskApplication extends Application {
 		super.onCreate();
 		
 		//初始化数据库
-		DatabaseUtil.initDatabase(this);
+//		DatabaseUtil.initDatabase(this);
 		
 	}
 

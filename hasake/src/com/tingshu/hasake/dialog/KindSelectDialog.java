@@ -13,19 +13,20 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.tingshu.hasake.R;
+import com.tingshu.hasake.config.HasakeConfig;
 
 public class KindSelectDialog extends Dialog{
 
 	private String[] kinds;
 	
 	public KindSelectDialog(Context context) {
-		super(context);
+		super(context, R.style.SelectDialogTheme);
 	}
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		
+		kinds = new String[]{HasakeConfig.home_tv_wenxue, HasakeConfig.home_tv_ertong};
 		initView();
 		initPosition();
 	}
@@ -42,6 +43,7 @@ public class KindSelectDialog extends Dialog{
 				container.addView(getItem(inflater, kinds[i]));
 			}
 		}
+		setContentView(container);
 	}
 	
 	private void initPosition(){
@@ -49,18 +51,20 @@ public class KindSelectDialog extends Dialog{
 		WindowManager m = getWindow().getWindowManager();
 		Display display = m.getDefaultDisplay(); //  获取屏幕宽、高用
 		WindowManager.LayoutParams params = getWindow().getAttributes(); // 获取对话框当前的参数值
-		params.width = (int) (display.getWidth() * 0.70); // 宽度设置为屏幕的0.7
+		params.width = (int) (display.getWidth() * 0.90); // 宽度设置为屏幕的0.7
 		getWindow().setAttributes(params);
 	}
 	
 	private TextView getItem(LayoutInflater inflater, final String kind){
 		TextView tv = (TextView) inflater.inflate(R.layout.item_dialog_album_text, null);
 		tv.setText(kind);
+		tv.setPadding(0, 20, 0, 20);
 		
 		tv.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View v) {
 				if(mKindClickListener != null){
 					mKindClickListener.onKindSelect(kind);
+					dismiss();
 				}
 			}
 		});

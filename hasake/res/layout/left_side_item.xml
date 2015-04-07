@@ -200,6 +200,7 @@
                 android:textSize="17sp" />
 
             <Button
+                android:id="@+id/bt_create"
                 android:layout_width="100dip"
                 android:layout_height="50dip"
                 android:layout_marginLeft="10dip"

@@ -11,12 +11,21 @@ import android.util.Log;
 public class HasakeConfig {
 	private final static String TAG = "HasakeConfig";
 	
+	public static String key_home_tv_wenxue;
+	public static String key_home_tv_yule;
+	public static String key_home_tv_lishi;
+	public static String key_home_tv_yinyue;
+	public static String key_home_tv_ertong;
+	public static String key_home_tv_jiankang;
+	
 	public static String home_tv_wenxue;
 	public static String home_tv_yule;
 	public static String home_tv_lishi;
 	public static String home_tv_yinyue;
 	public static String home_tv_ertong;
 	public static String home_tv_jiankang;
+	
+	public static String[] subType;
 	
 	/**
 	 * 初始化首页分类菜单
@@ -46,6 +55,32 @@ public class HasakeConfig {
 			e.printStackTrace();
 		}
 		
+	}
+	
+	public static void initSubType(Context context){
+		Properties properties = new Properties();
+		try {
+			InputStream is = context.getAssets().open("hanyu/subtype.properties");
+			properties.load(is);
+			subType = new String[20];
+			int index = 10000;
+			for(int i = 0; i < subType.length; i ++){
+				subType[i] = getPropertyValue(properties, (index + i) + "");
+			}
+			is.close();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public static int getSubTypeId(String type){
+		int ret = 0;
+		for(int i = 0; i < subType.length; i ++){
+			if(subType[i].equals(type)){
+				return 10000 + i;
+			}
+		}
+		return ret;
 	}
 	
 	private static String getPropertyValue(Properties properties, String key){

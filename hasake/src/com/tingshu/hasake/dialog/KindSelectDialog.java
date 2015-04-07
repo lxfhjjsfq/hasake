@@ -26,24 +26,21 @@ public class KindSelectDialog extends Dialog{
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		kinds = new String[]{HasakeConfig.home_tv_wenxue, HasakeConfig.home_tv_ertong};
+		kinds = HasakeConfig.subType;
 		initView();
 		initPosition();
 	}
 	
-	public void setSelectStr(String[] kinds){
-		this.kinds = kinds;
-	}
-	
 	private void initView(){
 		LayoutInflater inflater = LayoutInflater.from(getContext());
-		LinearLayout container = (LinearLayout) inflater.inflate(R.layout.dialog_album_select, null);
+		View layout = inflater.inflate(R.layout.dialog_album_select, null);
+		LinearLayout container = (LinearLayout) layout.findViewById(R.id.dialog_album_select_layout);
 		for(int i = 0; i < kinds.length; i ++){
 			if(!TextUtils.isEmpty(kinds[i])){
 				container.addView(getItem(inflater, kinds[i]));
 			}
 		}
-		setContentView(container);
+		setContentView(layout);
 	}
 	
 	private void initPosition(){
@@ -51,7 +48,8 @@ public class KindSelectDialog extends Dialog{
 		WindowManager m = getWindow().getWindowManager();
 		Display display = m.getDefaultDisplay(); //  获取屏幕宽、高用
 		WindowManager.LayoutParams params = getWindow().getAttributes(); // 获取对话框当前的参数值
-		params.width = (int) (display.getWidth() * 0.90); // 宽度设置为屏幕的0.7
+		params.width = (int) (display.getWidth() * 0.90); // 宽度设置为屏幕的0.9
+		params.height = (int) (display.getHeight() * 0.80); // 宽度设置为屏幕的0.8
 		getWindow().setAttributes(params);
 	}
 	
@@ -64,8 +62,8 @@ public class KindSelectDialog extends Dialog{
 			public void onClick(View v) {
 				if(mKindClickListener != null){
 					mKindClickListener.onKindSelect(kind);
-					dismiss();
 				}
+				dismiss();
 			}
 		});
 		return tv;

@@ -11,61 +11,106 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="10dip"
             android:orientation="horizontal" >
 
             <ImageButton
-                android:id="@+id/act_create_album_add_type"
+                android:id="@+id/act_upload_music_add_type"
                 android:layout_width="50dip"
                 android:layout_height="50dip"
                 android:layout_margin="10dip"
                 android:background="@drawable/fans_add" />
 
             <TextView
-                android:id="@+id/act_create_album_type_name"
+                android:id="@+id/act_upload_music_type_name"
                 android:layout_width="match_parent"
                 android:layout_height="50dip"
                 android:layout_margin="10dip"
                 android:background="#ffaaaaaa"
                 android:gravity="center"
-                android:hint="选择分类"
+                android:hint="选择类型"
                 android:textSize="18sp" />
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="10dip"
             android:orientation="horizontal" >
 
-            <EditText
-                android:id="@+id/act_create_album_edit_name"
+            <ImageButton
+                android:id="@+id/act_upload_music_add_album"
+                android:layout_width="50dip"
+                android:layout_height="50dip"
+                android:layout_margin="10dip"
+                android:background="@drawable/fans_add" />
+
+            <TextView
+                android:id="@+id/act_upload_music_album_name"
                 android:layout_width="match_parent"
                 android:layout_height="50dip"
                 android:layout_margin="10dip"
                 android:background="#ffaaaaaa"
                 android:gravity="center"
-                android:hint="专辑名称"
+                android:hint="选择专辑"
+                android:textSize="18sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <ImageButton
+                android:id="@+id/act_upload_music_add_music"
+                android:layout_width="50dip"
+                android:layout_height="50dip"
+                android:layout_margin="10dip"
+                android:background="@drawable/fans_add" />
+
+            <TextView
+                android:id="@+id/act_upload_music_music_name"
+                android:layout_width="match_parent"
+                android:layout_height="50dip"
+                android:layout_margin="10dip"
+                android:background="#ffaaaaaa"
+                android:gravity="center"
+                android:hint="选择音乐"
                 android:textSize="18sp" />
         </LinearLayout>
 
         <EditText
-            android:id="@+id/act_create_album_edit_des"
+            android:id="@+id/act_upload_music_edit_des"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
             android:layout_margin="10dip"
+            android:layout_weight="1"
             android:background="#ffaaaaaa"
             android:gravity="center"
-            android:hint="专辑描述"
+            android:hint="添加音乐简介"
             android:textSize="18sp" />
-        <Button 
-            android:id="@+id/act_create_album_create_button"
+
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="50dip"
-            android:layout_margin="10dip"
-            android:background="#3568af"
-            android:text="创建"/>
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <Button
+                android:id="@+id/act_upload_music_cancel_button"
+                android:layout_width="wrap_content"
+                android:layout_height="50dip"
+                android:layout_weight="1"
+                android:layout_margin="10dip"
+                android:background="#3568af"
+                android:text="取消" />
+
+            <Button
+                android:id="@+id/act_upload_music_upload_button"
+                android:layout_width="wrap_content"
+                android:layout_height="50dip"
+                android:layout_weight="1"
+                android:layout_margin="10dip"
+                android:background="#3568af"
+                android:text="上传" />
+        </LinearLayout>
     </LinearLayout>
 
 </FrameLayout>

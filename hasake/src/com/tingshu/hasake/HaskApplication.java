@@ -1,5 +1,6 @@
 package com.tingshu.hasake;
 
+import com.tingshu.hasake.config.HasakeConfig;
 import com.tingshu.hasake.database.DatabaseUtil;
 import com.tingshu.hasake.utils.SfpUtils;
 
@@ -12,7 +13,7 @@ public class HaskApplication extends Application {
 		
 		//初始化数据库
 //		DatabaseUtil.initDatabase(this);
-		
+		HasakeConfig.initSubType(this);
 	}
 
 	public boolean isLogin() {

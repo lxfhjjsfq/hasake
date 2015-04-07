@@ -73,6 +73,9 @@
         <activity
             android:name="com.tingshu.hasake.ui.activity.AlbumCreateActivity"
             android:screenOrientation="portrait" />
+                <activity
+            android:name="com.tingshu.hasake.ui.activity.UploadMusicActivity"
+            android:screenOrientation="portrait" />
     </application>
 
     <uses-permission android:name="android.permission.INTERNET" />

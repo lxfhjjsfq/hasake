@@ -94,18 +94,19 @@ public class AlbumCreateActivity extends BaseActivity {
 			return;
 		}
 		HashMap<String, Object> parms = new HashMap<String, Object>();
+		int typeId = HasakeConfig.getSubTypeId(typeName.getText().toString());
 		parms.put("AlbumName", albumName.getText());
-		parms.put("Type", 1002);
+		parms.put("Type", typeId);
 		parms.put("AlbumBackgroundImg", "");
 		parms.put("AccountID", aid);
 		parms.put("Content", "ceshi");
 		HaskHttpUtils.post(Constans.AddAlbum, parms, new HttpRequestCallBack() {
 			public void onSuccess(String result) {
-				Toast.makeText(AlbumCreateActivity.this, "onSuccess", Toast.LENGTH_SHORT).show();
+				Toast.makeText(AlbumCreateActivity.this, "创建专辑成功", Toast.LENGTH_SHORT).show();
 				finish();
 			}
 			public void onStart() {
-				Toast.makeText(AlbumCreateActivity.this, "onStart", Toast.LENGTH_SHORT).show();
+//				Toast.makeText(AlbumCreateActivity.this, "onStart", Toast.LENGTH_SHORT).show();
 			}
 			public void onFailure(String error) {
 				Toast.makeText(AlbumCreateActivity.this, error, Toast.LENGTH_SHORT).show();

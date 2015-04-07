@@ -8,6 +8,7 @@ import com.tingshu.hasake.ui.activity.AlbumCreateActivity;
 import com.tingshu.hasake.ui.activity.FansActivity;
 import com.tingshu.hasake.ui.activity.HistoryActivity;
 import com.tingshu.hasake.ui.activity.SpecialActivity;
+import com.tingshu.hasake.ui.activity.UploadMusicActivity;
 import com.tingshu.hasake.ui.activity.ZanActivity;
 
 import android.content.Intent;
@@ -31,6 +32,7 @@ public class LeftFragment extends Fragment implements OnClickListener {
 	private TextView tv_pinglun;
 	
 	private Button bt_create;
+	private Button bt_upload;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -59,6 +61,7 @@ public class LeftFragment extends Fragment implements OnClickListener {
 		tv_pinglun.setOnClickListener(this);
 
 		bt_create = (Button) view.findViewById(R.id.bt_create);
+		bt_upload = (Button) view.findViewById(R.id.bt_upload);
 	}
 
 	private void initListener() {
@@ -66,6 +69,7 @@ public class LeftFragment extends Fragment implements OnClickListener {
 		tv_msg.setOnClickListener(this);
 		tv_bofang_jilu.setOnClickListener(this);
 		bt_create.setOnClickListener(this);
+		bt_upload.setOnClickListener(this);
 		tv_guanzhu.setOnClickListener(new OnClickListener() {
 
 			@Override
@@ -115,6 +119,11 @@ public class LeftFragment extends Fragment implements OnClickListener {
 			Intent createIntent = new Intent(getActivity(),
 					AlbumCreateActivity.class);
 			startActivity(createIntent);
+			break;
+		case R.id.bt_upload:
+			Intent uploadIntent = new Intent(getActivity(),
+					UploadMusicActivity.class);
+			startActivity(uploadIntent);
 			break;
 		default:
 			break;

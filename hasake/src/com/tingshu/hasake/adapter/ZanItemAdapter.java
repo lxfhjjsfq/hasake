@@ -50,6 +50,7 @@ public class ZanItemAdapter extends BaseAdapter {
 					DownloadDao dao = new DownloadDao("周四:你还没来-白雪【晚上10点整第189期】", "music", "", "");
 					DatabaseUtil.getInstance().insertCache(dao);
 					
+					
 				}
 			}
 		});

@@ -11,11 +11,15 @@ public class HaskApplication extends Application {
 		super.onCreate();
 		
 		//初始化数据库
-		DatabaseUtil.initDatabase(this);
+//		DatabaseUtil.initDatabase(this);
 		
 	}
 
 	public boolean isLogin() {
 		return SfpUtils.getIntDataToSp(this, SfpUtils.USER_ID, -1) != -1;
+	}
+
+	public int getUserId() {
+		return SfpUtils.getIntDataToSp(this, SfpUtils.USER_ID, -1);
 	}
 }

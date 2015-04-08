@@ -16,7 +16,7 @@
             android:layout_height="wrap_content"
             android:text="写私信"
             android:gravity="center_vertical"
-            android:drawableLeft="@drawable/ic_launcher"
+            android:drawableLeft="@drawable/zhoujielu"
             android:textSize="18sp" />
 
         <TextView

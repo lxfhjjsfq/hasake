@@ -47,7 +47,7 @@ public class AllMusicActivity extends BaseActivity {
 	private void getMusicByType() {
 		HashMap<String, Object> parms = new HashMap<String, Object>();
 		parms.put("type", typeId);
-		HaskHttpUtils.sendGet(Constans.GetAlbum, parms,
+		new HaskHttpUtils().sendGet(Constans.GetAlbum, parms,
 				new HttpRequestCallBack() {
 
 					@Override

@@ -7,6 +7,7 @@
     android:paddingBottom="10dip" >
 
     <ImageView
+        android:id="@+id/iv_msg_head"
         android:layout_width="50dip"
         android:layout_height="50dip"
         android:layout_gravity="center_vertical"
@@ -25,6 +26,7 @@
             android:paddingRight="10dip" >
 
             <TextView
+                android:id="@+id/tv_msg_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center_vertical"
@@ -32,6 +34,7 @@
                 android:textColor="#ff494949" />
 
             <TextView
+                android:id="@+id/tv_msg_time"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center_vertical"
@@ -47,6 +50,7 @@
             android:orientation="horizontal" >
 
             <TextView
+                android:id="@+id/tv_msg_content"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Hi,我是你的朋友90后，我以后会。。。"

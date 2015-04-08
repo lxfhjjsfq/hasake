@@ -6,23 +6,32 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 
+import android.content.Intent;
 import android.graphics.Canvas;
 import android.os.Bundle;
+import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.Window;
+import android.widget.ImageView;
 
 import com.jeremyfeinstein.slidingmenu.lib.SlidingMenu;
 import com.jeremyfeinstein.slidingmenu.lib.app.SlidingFragmentActivity;
 import com.tingshu.hasake.fragment.HomeFragment;
 import com.tingshu.hasake.fragment.LeftFragment;
+import com.tingshu.hasake.ui.activity.MusicDownloadActivity;
+import com.tingshu.hasake.ui.activity.PlayActivity;
 import com.tingshu.hasake.utils.FileUtil;
 
 public class MainActivity extends SlidingFragmentActivity {
 	private HomeFragment homeFragment;
+	private ImageView iv_dongtai;
+	private ImageView iv_xiazai;
+	private ImageView iv_play;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		requestWindowFeature(Window.FEATURE_NO_TITLE);//去掉标题栏
+		requestWindowFeature(Window.FEATURE_NO_TITLE);// 去掉标题栏
 		setContentView(R.layout.activity_main);
 		initView();
 		initListener();
@@ -32,6 +41,9 @@ public class MainActivity extends SlidingFragmentActivity {
 
 	private void initView() {
 		setResideMenu();
+		iv_dongtai = (ImageView) findViewById(R.id.iv_dongtai);
+		iv_play = (ImageView) findViewById(R.id.iv_play);
+		iv_xiazai = (ImageView) findViewById(R.id.iv_xiazai);
 
 	}
 
@@ -42,6 +54,35 @@ public class MainActivity extends SlidingFragmentActivity {
 	}
 
 	private void initListener() {
+		iv_dongtai.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View arg0) {
+				Intent intent = new Intent(MainActivity.this,
+						DongtaiActivity.class);
+				startActivity(intent);
+
+			}
+		});
+		iv_play.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View arg0) {
+				Intent intent = new Intent(MainActivity.this,
+						PlayActivity.class);
+				startActivity(intent);
+			}
+		});
+
+		iv_xiazai.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View arg0) {
+				Intent intent = new Intent(MainActivity.this,
+						MusicDownloadActivity.class);
+				startActivity(intent);
+			}
+		});
 
 	}
 

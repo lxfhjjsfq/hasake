@@ -1,6 +1,7 @@
 package com.tingshu.hasake;
 
 import android.app.Activity;
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
@@ -13,12 +14,15 @@ public abstract class BaseActivity extends FragmentActivity {
 
 	protected Context context;
 	protected HaskApplication application;
+	protected ProgressDialog pd;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		requestWindowFeature(Window.FEATURE_CUSTOM_TITLE);
 		context = this;
+		pd=new ProgressDialog(this);
+		pd.setMessage("数据加载中");
 		application=(HaskApplication) getApplication();
 		setcontentView();
 		getWindow().setFeatureInt(Window.FEATURE_CUSTOM_TITLE,
@@ -83,6 +87,17 @@ public abstract class BaseActivity extends FragmentActivity {
 	
 	public void getNetData(){
 		
+	}
+	
+	protected void showDailog(){
+		if(!pd.isShowing()){
+			pd.show();
+		}
+		
+	}
+	
+	protected void hideDialog(){
+		pd.dismiss();
 	}
 
 }

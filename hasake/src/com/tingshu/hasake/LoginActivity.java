@@ -63,13 +63,14 @@ public class LoginActivity extends BaseActivity {
 	 */
 	private void login(String name, String pwd) {
 		HashMap<String, Object> parms = new HashMap<String, Object>();
-		parms.put("phone", name);
+		parms.put("email", name);
 		parms.put("password", pwd);
-		HaskHttpUtils.sendGet(Constans.loginUlr, parms,
+		new HaskHttpUtils().sendGet(Constans.loginUlr, parms,
 				new HttpRequestCallBack() {
 
 					@Override
 					public void onSuccess(String result) {
+						hideDialog();
 						JSONObject jsonObject = (JSONObject) JSONObject
 								.parse(result);
 						if (jsonObject.containsKey("Result")) {
@@ -89,12 +90,14 @@ public class LoginActivity extends BaseActivity {
 
 					@Override
 					public void onStart() {
+						showDailog();
 
 					}
 
 					@Override
 					public void onFailure(String error) {
 						log(error);
+						hideDialog();
 
 					}
 				});

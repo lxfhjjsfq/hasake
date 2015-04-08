@@ -11,7 +11,7 @@ public class Constans {
 	// 获得粉丝
 	public static final String GetMyFans = IP + "/api/user/GetMyFans";
 
-	public static final String GetMyGuanZhu = IP + "/api/user/GetMyFans";
+	public static final String GetMyGuanZhu = IP + "/api/user/GetMyAttention";
 
 	public static final String GetMyReview = IP + "/api/Album/GetMyReview";
 	public static final String GetMyReviewMy = IP + "/api/Album/GetMyReviewMy";
@@ -21,4 +21,9 @@ public class Constans {
 	
 	public static final String AddAlbum =IP+ "/api/Album/AddAlbum";
 	public static final String AddMusic =IP+ "/api/album/AddVideo";
+	public static final String GetUser=IP+"/api/User/getUser";
+	
+	public static final String getletter=IP+"/api/letter/getletter";
+	
+	 public static final String getshowletter=IP+"/api/letter/getshowletter";
 }

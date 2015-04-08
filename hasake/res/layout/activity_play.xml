@@ -1,22 +1,22 @@
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:scrollbars="none"
     android:layout_width="match_parent"
-    android:layout_height="match_parent" >
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
 
-    <LinearLayout
+    <!-- play view -->
+
+    <com.tingshu.hasake.widget.MusicPlayView
+        android:id="@+id/act_play_music_view"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical" >
+        android:layout_height="wrap_content" />
 
-        <!-- play view -->
+    <!-- attention item -->
 
-        <com.tingshu.hasake.widget.MusicPlayView
-            android:id="@+id/act_play_music_view"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-
-        <!-- attention item -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none" >
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -76,29 +76,29 @@
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:padding="3dip"
                         android:layout_weight="1"
+                        android:padding="3dip"
                         android:src="@drawable/ic_launcher" />
 
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:padding="3dip"
                         android:layout_weight="1"
+                        android:padding="3dip"
                         android:src="@drawable/ic_launcher" />
 
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:padding="3dip"
                         android:layout_weight="1"
+                        android:padding="3dip"
                         android:src="@drawable/ic_launcher" />
 
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:padding="3dip"
                         android:layout_weight="1"
+                        android:padding="3dip"
                         android:src="@drawable/ic_launcher" />
                 </LinearLayout>
 
@@ -127,10 +127,12 @@
                 android:orientation="vertical" >
 
                 <include layout="@layout/act_play_comment_item" />
+
                 <include layout="@layout/act_play_comment_item" />
+
                 <include layout="@layout/act_play_comment_item" />
             </LinearLayout>
         </LinearLayout>
-    </LinearLayout>
+    </ScrollView>
 
-</ScrollView>
+</LinearLayout>

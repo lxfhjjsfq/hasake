@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="50dip"
     android:orientation="horizontal"
-    android:background="#ff3568af" >
+    >
 
     <TextView
         android:id="@+id/act_title_one_text"

@@ -14,6 +14,7 @@ public class HaskApplication extends Application {
 		//初始化数据库
 //		DatabaseUtil.initDatabase(this);
 		HasakeConfig.initSubType(this);
+		
 	}
 
 	public boolean isLogin() {

@@ -4,6 +4,13 @@ public class DingyueBean {
 	private String Name;
 	private String UpdateTime;
 	private String Img;
+	private int Count;
+	public int getCount() {
+		return Count;
+	}
+	public void setCount(int count) {
+		Count = count;
+	}
 	public String getName() {
 		return Name;
 	}

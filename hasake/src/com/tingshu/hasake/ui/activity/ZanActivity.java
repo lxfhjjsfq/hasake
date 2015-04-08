@@ -7,6 +7,7 @@ import android.widget.TextView;
 import com.tingshu.hasake.BaseActivity;
 import com.tingshu.hasake.R;
 import com.tingshu.hasake.adapter.ZanItemAdapter;
+import com.tingshu.hasake.utils.Constans;
 
 public class ZanActivity extends BaseActivity {
 
@@ -36,12 +37,19 @@ public class ZanActivity extends BaseActivity {
 
 	@Override
 	protected void initData() {
+		getNetData();
 		
 	}
 
 	@Override
 	protected void initListener() {
 		
+	}
+	
+	@Override
+	public void getNetData() {
+		super.getNetData();
+		 //Constans
 	}
 
 

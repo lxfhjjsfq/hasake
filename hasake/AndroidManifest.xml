@@ -25,14 +25,6 @@
         <activity
             android:name="com.tingshu.hasake.ui.activity.PlayActivity"
             android:screenOrientation="portrait" >
-
-            <!--
-            intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter
-            -->
         </activity>
         <activity
             android:name="com.tingshu.hasake.ui.activity.FansActivity"
@@ -73,9 +65,21 @@
         <activity
             android:name="com.tingshu.hasake.ui.activity.AlbumCreateActivity"
             android:screenOrientation="portrait" />
-                <activity
+        <activity
             android:name="com.tingshu.hasake.ui.activity.UploadMusicActivity"
             android:screenOrientation="portrait" />
+        <activity
+            android:name="com.tingshu.hasake.AllMusicTypeActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.tingshu.hasake.PingLunActvity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.tingshu.hasake.DongtaiActivity"
+            android:screenOrientation="portrait" >
+        </activity>
     </application>
 
     <uses-permission android:name="android.permission.INTERNET" />

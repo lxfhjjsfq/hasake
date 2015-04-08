@@ -9,6 +9,7 @@ import com.fengwei.app.http.HaskHttpUtils;
 import com.fengwei.app.http.HaskHttpUtils.HttpRequestCallBack;
 import com.tingshu.hasake.adapter.GuanzhuLvAdapter;
 import com.tingshu.hasake.bean.FansBean;
+import com.tingshu.hasake.bean.GuanZhuBean;
 import com.tingshu.hasake.utils.Constans;
 
 import android.widget.ListView;
@@ -37,6 +38,7 @@ public class GuanZhuActivity extends BaseActivity {
 	protected void initData() {
 		adapter = new GuanzhuLvAdapter(this);
 		lv_guanzhu.setAdapter(adapter);
+		getNetData();
 
 	}
 
@@ -52,17 +54,18 @@ public class GuanZhuActivity extends BaseActivity {
 		parms.put("id", application.getUserId());
 		parms.put("Cur", 1);
 		parms.put("rows", 10);
-		HaskHttpUtils.sendGet(Constans.GetMyFans, parms,
+		new HaskHttpUtils().sendGet(Constans.GetMyGuanZhu, parms,
 				new HttpRequestCallBack() {
 
 					@Override
 					public void onSuccess(String result) {
+						hideDialog();
 						JSONObject jsonObject = JSON.parseObject(result);
 						if (jsonObject.containsKey("Result")) {
 
-							List<FansBean> list = JSON.parseArray(jsonObject
+							List<GuanZhuBean> list = JSON.parseArray(jsonObject
 									.getJSONArray("Result").toJSONString(),
-									FansBean.class);
+									GuanZhuBean.class);
 							if (list.size() == 0) {
 								toast("没有更多了");
 							} else {
@@ -76,12 +79,13 @@ public class GuanZhuActivity extends BaseActivity {
 
 					@Override
 					public void onStart() { 
+						showDailog();
 
 					}
 
 					@Override
 					public void onFailure(String error) {
-
+						hideDialog();
 					}
 				});
 	}

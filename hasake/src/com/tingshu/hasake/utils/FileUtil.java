@@ -10,4 +10,9 @@ public class FileUtil {
 		return path;
 	}
 	
+	public static String getExternalDir(){
+		String path = Environment.getExternalStorageDirectory().getAbsolutePath();
+		return path;
+	}
+	
 }

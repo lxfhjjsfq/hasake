@@ -1,8 +1,10 @@
 package com.tingshu.hasake.ui.activity;
 
+import java.io.File;
 import java.util.HashMap;
 
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -12,6 +14,7 @@ import android.widget.Toast;
 
 import com.fengwei.app.http.HaskHttpUtils;
 import com.fengwei.app.http.HaskHttpUtils.HttpRequestCallBack;
+import com.fengwei.app.http.HaskHttpUtils.UploadCallback;
 import com.tingshu.hasake.BaseActivity;
 import com.tingshu.hasake.R;
 import com.tingshu.hasake.config.HasakeConfig;
@@ -19,6 +22,7 @@ import com.tingshu.hasake.dialog.AlbumSelectDialog;
 import com.tingshu.hasake.dialog.AlbumSelectDialog.AlbumClickListener;
 import com.tingshu.hasake.dialog.KindSelectDialog;
 import com.tingshu.hasake.dialog.KindSelectDialog.KindClickListener;
+import com.tingshu.hasake.dialog.MusicSelectDialog;
 import com.tingshu.hasake.utils.Constans;
 import com.tingshu.hasake.utils.SfpUtils;
 
@@ -31,8 +35,12 @@ public class UploadMusicActivity extends BaseActivity {
 	private TextView tv_addAlbum;
 	private TextView tv_addMusic;
 	private EditText et_addDes;
+	private EditText et_musicName;
 	private Button bt_cancel;
 	private Button bt_upload;
+	
+	private String filePath;
+	private int albumId;
 	
 	@Override
 	protected void setcontentView() {
@@ -51,6 +59,7 @@ public class UploadMusicActivity extends BaseActivity {
 		tv_addAlbum = (TextView) findViewById(R.id.act_upload_music_album_name);
 		tv_addMusic = (TextView) findViewById(R.id.act_upload_music_music_name);
 		et_addDes = (EditText) findViewById(R.id.act_upload_music_edit_des);
+		et_musicName = (EditText) findViewById(R.id.act_upload_music_edit_name);
 		bt_cancel = (Button) findViewById(R.id.act_upload_music_cancel_button);
 		bt_upload = (Button) findViewById(R.id.act_upload_music_upload_button);
 		
@@ -98,6 +107,14 @@ public class UploadMusicActivity extends BaseActivity {
 					return;
 				}
 				//mp3格式的列表
+				MusicSelectDialog dialog = new MusicSelectDialog(UploadMusicActivity.this);
+				dialog.setMusicClickListener(new MusicSelectDialog.MusicClickListener() {
+					public void onMusicSelect(String music, String path) {
+						filePath = path;
+						tv_addMusic.setText(music);
+					}
+				});
+				dialog.show();
 //				KindSelectDialog dialog = new KindSelectDialog(UploadMusicActivity.this);
 //				dialog.setKindClickListener(new KindClickListener() {
 //					public void onKindSelect(String Kind) {
@@ -130,7 +147,12 @@ public class UploadMusicActivity extends BaseActivity {
 			Toast.makeText(this, "专辑不能为空", Toast.LENGTH_SHORT).show();
 			return;
 		}
-		if(TextUtils.isEmpty(tv_addMusic.getText())){
+		if(TextUtils.isEmpty(et_musicName.getText())){
+			//需要适配语言
+			Toast.makeText(this, "音乐名称不能为空", Toast.LENGTH_SHORT).show();
+			return;
+		}
+		if(TextUtils.isEmpty(et_addDes.getText())){
 			//需要适配语言
 			Toast.makeText(this, "音乐简介不能为空", Toast.LENGTH_SHORT).show();
 			return;
@@ -142,12 +164,13 @@ public class UploadMusicActivity extends BaseActivity {
 		}
 		HashMap<String, Object> parms = new HashMap<String, Object>();
 //		parms.put("AlbumID", albumName.getText());
-		parms.put("VideoName", 1002);
-		parms.put("Des", "");
+		parms.put("AlbumID", albumId);
+		parms.put("VideoName", et_musicName.getText());
+		parms.put("Des", et_addDes.getText());
 		parms.put("AccountID", aid);
 		parms.put("VideoImg", "");
-		parms.put("ViderUrl", "");
-		HaskHttpUtils.post(Constans.AddAlbum, parms, new HttpRequestCallBack() {
+		parms.put("ViderUrl", "123");
+		HaskHttpUtils.upload(Constans.AddMusic, parms, filePath, new UploadCallback() {
 			public void onSuccess(String result) {
 				Toast.makeText(UploadMusicActivity.this, "onSuccess", Toast.LENGTH_SHORT).show();
 				finish();
@@ -157,6 +180,10 @@ public class UploadMusicActivity extends BaseActivity {
 			}
 			public void onFailure(String error) {
 				Toast.makeText(UploadMusicActivity.this, error, Toast.LENGTH_SHORT).show();
+			}
+			@Override
+			public void onLoading(long total, long current, boolean isUploading) {
+				Log.e("upload ...", "total : " + total + " ,percent : " + (current * 100 / total));
 			}
 		});
 	}

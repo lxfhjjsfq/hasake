@@ -1,22 +1,22 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical" >
-
-    <!-- play view -->
-
-    <com.tingshu.hasake.widget.MusicPlayView
-        android:id="@+id/act_play_music_view"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+    android:scrollbars="none" >
 
     <!-- attention item -->
 
-    <ScrollView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:scrollbars="none" >
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <!-- play view -->
+
+        <com.tingshu.hasake.widget.MusicPlayView
+            android:id="@+id/act_play_music_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -133,6 +133,6 @@
                 <include layout="@layout/act_play_comment_item" />
             </LinearLayout>
         </LinearLayout>
-    </ScrollView>
+    </LinearLayout>
 
-</LinearLayout>
+</ScrollView>

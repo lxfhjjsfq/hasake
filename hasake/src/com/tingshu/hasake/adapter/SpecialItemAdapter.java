@@ -19,6 +19,8 @@ import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
+import android.widget.TextView;
+import android.widget.Toast;
 
 public class SpecialItemAdapter extends BaseAdapter {
 
@@ -31,7 +33,7 @@ public class SpecialItemAdapter extends BaseAdapter {
 
 	@Override
 	public int getCount() {
-		return 8;
+		return list.size();
 	}
 
 	@Override
@@ -47,52 +49,86 @@ public class SpecialItemAdapter extends BaseAdapter {
 	@Override
 	public View getView(int arg0, View arg1, ViewGroup arg2) {
 
-		View view = LayoutInflater.from(context).inflate(
-				R.layout.act_special_special_item, null);
-		ImageView iv_dele=(ImageView) view.findViewById(R.id.act_fans_fans_item_button);
-		iv_dele.setOnClickListener(new OnClickListener() {
-			
+		Holder holder = null;
+
+		if (arg1 == null) {
+			holder = new Holder();
+			arg1 = LayoutInflater.from(context).inflate(
+					R.layout.act_special_special_item, null);
+			holder.iv_dele = (ImageView) arg1
+					.findViewById(R.id.act_special_special_item_button);
+			holder.iv_dingyue_head = (ImageView) arg1
+					.findViewById(R.id.iv_dingyue_head);
+			holder.tv_dingyu_name = (TextView) arg1
+					.findViewById(R.id.tv_dingyu_name);
+			holder.tv_dingyue_time = (TextView) arg1
+					.findViewById(R.id.tv_dingyue_time);
+			holder.tv_jiemu_count = (TextView) arg1
+					.findViewById(R.id.tv_jiemu_count);
+			arg1.setTag(holder);
+
+		} else {
+			holder = (Holder) arg1.getTag();
+		}
+		DingyueBean dingyueBean = list.get(arg0);
+		holder.tv_dingyu_name.setText(dingyueBean.getName());
+		holder.tv_dingyue_time.setText(dingyueBean.getUpdateTime());
+		holder.tv_jiemu_count.setText("节目数 "+dingyueBean.getCount() + "");
+		holder.iv_dele.setOnClickListener(new OnClickListener() {
+
 			@Override
 			public void onClick(View v) {
-				dele(0);
-				
-			}  
-		});
+				// dele(dingyueBean.get);
 
-		return view;
+			}
+		});
+		return arg1;
 	}
 
 	public void addMore(List<DingyueBean> dingyueBeans) {
 		list.addAll(dingyueBeans);
+		notifyDataSetChanged();
 	}
-	
+
+	class Holder {
+		TextView tv_dingyu_name;
+		TextView tv_jiemu_count;
+		TextView tv_dingyue_time;
+		ImageView iv_dingyue_head;
+		ImageView iv_dele;
+	}
+
 	/**
 	 * 删除订阅
+	 * 
 	 * @param id
 	 */
-	private void dele(int id){
-		HashMap<String, Object> parms=new HashMap<String, Object>();
-		parms.put("UserID", SfpUtils.getIntDataToSp(context, SfpUtils.USER_ID, -1));
+	private void dele(int id) {
+		HashMap<String, Object> parms = new HashMap<String, Object>();
+		parms.put("UserID",
+				SfpUtils.getIntDataToSp(context, SfpUtils.USER_ID, -1));
 		parms.put("Id", id);
-		HaskHttpUtils.sendGet(Constans.DelSubscription, parms, new HttpRequestCallBack() {
-			
-			@Override
-			public void onSuccess(String result) {
-				
-			}
-			
-			@Override
-			public void onStart() {
-				// TODO Auto-generated method stub
-				
-			}
-			
-			@Override
-			public void onFailure(String error) {
-				// TODO Auto-generated method stub
-				
-			}
-		});
+		new HaskHttpUtils().sendGet(Constans.DelSubscription, parms,
+				new HttpRequestCallBack() {
+
+					@Override
+					public void onSuccess(String result) {
+						Toast.makeText(context, "删除成功", Toast.LENGTH_SHORT)
+								.show();
+
+					}
+
+					@Override
+					public void onStart() {
+
+					}
+
+					@Override
+					public void onFailure(String error) {
+						// TODO Auto-generated method stub
+
+					}
+				});
 	}
 
 }

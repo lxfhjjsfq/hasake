@@ -1,24 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="50dip"
-    android:background="#ff3568af" >
+    android:layout_height="50dip" >
 
     <TextView
         android:id="@+id/act_tiltle_text"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" 
+        android:layout_height="match_parent"
         android:gravity="center"
         android:textColor="#ffffffff"
-        android:textSize="22sp"/>
+        android:textSize="22sp" />
+
     <TextView
         android:id="@+id/act_tiltle_right_text"
         android:layout_width="wrap_content"
-        android:layout_height="match_parent" 
-        android:layout_marginRight="15dip"
+        android:layout_height="match_parent"
         android:layout_gravity="right"
+        android:layout_marginRight="15dip"
         android:gravity="center_vertical|right"
         android:textColor="#ffffffff"
         android:textSize="22sp"
-        android:visibility="gone"/>
+        android:visibility="gone" />
+
 </FrameLayout>

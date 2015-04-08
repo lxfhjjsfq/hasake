@@ -64,7 +64,7 @@ public class RegistActivity extends BaseActivity {
 		parms.put("Password", pwd);
 		parms.put("NickName", "sjw");
 		// parms.put("", value)
-		HaskHttpUtils.sendGet(Constans.registUrl, parms,
+		new HaskHttpUtils().sendGet(Constans.registUrl, parms,
 				new HttpRequestCallBack() {
 
 					@Override

@@ -3,6 +3,7 @@ package com.tingshu.hasake.fragment;
 import java.util.HashMap;
 import java.util.List;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -19,6 +20,7 @@ import com.tingshu.hasake.adapter.PingLunLvAdapter;
 import com.tingshu.hasake.bean.PingLunBean;
 import com.tingshu.hasake.utils.Constans;
 
+@SuppressLint("ValidFragment")
 public class PingLunFragment extends BaseFragment {
 	private View view;
 	private ListView lv_pinglu;
@@ -66,38 +68,39 @@ public class PingLunFragment extends BaseFragment {
 		parms.put("userid", application.getUserId());
 		parms.put("Cur", 1);
 		parms.put("Rows", 10);
-		HaskHttpUtils.sendGet(url, parms,
+		new HaskHttpUtils().sendGet(url, parms,
 				new HttpRequestCallBack() {
 
 					@Override
 					public void onSuccess(String result) {
-//						JSONObject jsonObject = (JSONObject) JSONObject
-//								.parse(result);
-//						if (jsonObject.containsKey("Result")) {
-//
-//							List<PingLunBean> list = JSON.parseArray(jsonObject
-//									.getJSONArray("Result").toJSONString(),
-//									PingLunBean.class);
-//							if (list.size() == 0) {
-//								Toast.makeText(context, "没有更多评论了",
-//										Toast.LENGTH_SHORT).show();
-//							} else {
-//								adapter.addMore(list);
-//							}
-//
-//						} else {
-//
-//						}
+						hiedePd();
+						JSONObject jsonObject = (JSONObject) JSONObject
+								.parse(result);
+						if (jsonObject.containsKey("Result")) {
+
+							List<PingLunBean> list = JSON.parseArray(jsonObject
+									.getJSONArray("Result").toJSONString(),
+									PingLunBean.class);
+							if (list.size() == 0) {
+								Toast.makeText(context, "没有更多评论了",
+										Toast.LENGTH_SHORT).show();
+							} else {
+								adapter.addMore(list);
+							}
+
+						} else {
+
+						}
 					}
 
 					@Override
 					public void onStart() {
-
+						showPd();
 					}
 
 					@Override
 					public void onFailure(String error) {
-
+						hiedePd();
 					}
 				});
 	}

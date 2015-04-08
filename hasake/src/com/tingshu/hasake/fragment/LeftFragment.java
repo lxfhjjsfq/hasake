@@ -1,24 +1,33 @@
 package com.tingshu.hasake.fragment;
 
+import java.util.HashMap;
+
+import com.alibaba.fastjson.JSON;
+import com.fengwei.app.http.HaskHttpUtils;
+import com.fengwei.app.http.HaskHttpUtils.HttpRequestCallBack;
 import com.tingshu.hasake.GuanZhuActivity;
 import com.tingshu.hasake.MyMsgActivity;
 import com.tingshu.hasake.PingLunActvity;
 import com.tingshu.hasake.R;
+import com.tingshu.hasake.bean.UserDisBean;
 import com.tingshu.hasake.ui.activity.FansActivity;
 import com.tingshu.hasake.ui.activity.HistoryActivity;
 import com.tingshu.hasake.ui.activity.SpecialActivity;
 import com.tingshu.hasake.ui.activity.ZanActivity;
+import com.tingshu.hasake.utils.Constans;
 
 import android.content.Intent;
+import android.media.UnsupportedSchemeException;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
-public class LeftFragment extends Fragment implements OnClickListener {
+public class LeftFragment extends BaseFragment implements OnClickListener {
 	private View view;
 	private TextView tv_guanzhu;
 	private TextView tv_fans;
@@ -27,6 +36,13 @@ public class LeftFragment extends Fragment implements OnClickListener {
 	private TextView tv_bofang_jilu;
 	private TextView tv_dingyue;
 	private TextView tv_pinglun;
+	private ImageView iv_head;
+	private TextView tv_nick;
+	private TextView tv_dis;
+	private TextView tv_guanzhu_count;
+	private TextView tv_fans_count;
+	private TextView tv_my_zhuanji;
+	private TextView tv_my_voice;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -40,10 +56,18 @@ public class LeftFragment extends Fragment implements OnClickListener {
 		view = inflater.inflate(R.layout.left_side_item, null);
 		initView();
 		initListener();
+		initData();
 		return view;
 	}
 
 	private void initView() {
+		iv_head = (ImageView) view.findViewById(R.id.iv_head);
+		tv_nick = (TextView) view.findViewById(R.id.tv_nickname);
+		tv_dis = (TextView) view.findViewById(R.id.tv_dis);
+		tv_guanzhu_count = (TextView) view.findViewById(R.id.tv_guanzhu_count);
+		tv_fans_count = (TextView) view.findViewById(R.id.tv_fans_count);
+		tv_my_zhuanji = (TextView) view.findViewById(R.id.tv_zhuanji_count);
+		tv_my_voice = (TextView) view.findViewById(R.id.tv_my_voice);
 		tv_guanzhu = (TextView) view.findViewById(R.id.tv_guanzhu);
 		tv_fans = (TextView) view.findViewById(R.id.tv_fans);
 		tv_msg = (TextView) view.findViewById(R.id.tv_msg);
@@ -54,6 +78,10 @@ public class LeftFragment extends Fragment implements OnClickListener {
 		tv_pinglun = (TextView) view.findViewById(R.id.tv_pinglun);
 		tv_pinglun.setOnClickListener(this);
 
+	}
+
+	private void initData() {
+		getNetData();
 	}
 
 	private void initListener() {
@@ -111,4 +139,39 @@ public class LeftFragment extends Fragment implements OnClickListener {
 
 	}
 
+	private void getNetData() {
+		HashMap<String, Object> parms = new HashMap<String, Object>();
+		parms.put("Id", application.getUserId());
+		new HaskHttpUtils().sendGet(Constans.GetUser, parms,
+				new HttpRequestCallBack() {
+
+					@Override
+					public void onSuccess(String result) {
+						String json = JSON.parseObject(result)
+								.getJSONObject("Result").toJSONString();
+						UserDisBean disBean = JSON.parseObject(json,
+								UserDisBean.class);
+						bindDataToView(disBean);
+
+					}
+
+					@Override
+					public void onStart() {
+
+					}
+
+					@Override
+					public void onFailure(String error) {
+						Toast(error);
+					}
+				});
+	}
+
+	private void bindDataToView(UserDisBean disBean) {
+		tv_nick.setText(disBean.getNickname());
+		//tv_dis=disBean.set
+		//tv_guanzhu_count.setText(disBean.get)
+		tv_fans_count.setText(String.valueOf(disBean.getFansCount()));
+		tv_my_zhuanji.setText(String.valueOf(disBean.getViderCount()));
+	}
 }

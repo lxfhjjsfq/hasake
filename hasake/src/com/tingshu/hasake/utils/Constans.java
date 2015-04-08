@@ -11,11 +11,17 @@ public class Constans {
 	// 获得粉丝
 	public static final String GetMyFans = IP + "/api/user/GetMyFans";
 
-	public static final String GetMyGuanZhu = IP + "/api/user/GetMyFans";
+	public static final String GetMyGuanZhu = IP + "/api/user/GetMyAttention";
 
 	public static final String GetMyReview = IP + "/api/Album/GetMyReview";
 	public static final String GetMyReviewMy = IP + "/api/Album/GetMyReviewMy";
 
 	public static final String GetMySubscription = IP+ "/api/user/GetMySubscription";
 	public static final String DelSubscription =IP+ "/api/user/DelSubscription";
+	
+	public static final String GetUser=IP+"/api/User/getUser";
+	
+	public static final String getletter=IP+"/api/letter/getletter";
+	
+	 public static final String getshowletter=IP+"/api/letter/getshowletter";
 }

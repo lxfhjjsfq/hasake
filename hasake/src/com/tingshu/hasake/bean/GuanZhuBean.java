@@ -1,19 +1,13 @@
 package com.tingshu.hasake.bean;
 
-public class FansBean {
+public class GuanZhuBean {
 	private String Nickname;
 	private String HeadImg;
 	private int ID;
 	private int VideoCount;
 	private int FansCount;
 	private String Des;
-	private boolean IsFriend;
-	public boolean isIsFriend() {
-		return IsFriend;
-	}
-	public void setIsFriend(boolean isFriend) {
-		IsFriend = isFriend;
-	}
+	private boolean IsFfiend;
 	private int IsVip;
 	public String getNickname() {
 		return Nickname;
@@ -51,7 +45,12 @@ public class FansBean {
 	public void setDes(String des) {
 		Des = des;
 	}
-	
+	public boolean isIsFfiend() {
+		return IsFfiend;
+	}
+	public void setIsFfiend(boolean isFfiend) {
+		IsFfiend = isFfiend;
+	}
 	public int getIsVip() {
 		return IsVip;
 	}

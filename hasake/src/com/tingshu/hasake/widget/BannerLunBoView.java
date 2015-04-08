@@ -117,13 +117,11 @@ public class BannerLunBoView extends RelativeLayout {
 
 		@Override
 		public int getCount() {
-			// TODO Auto-generated method stub
 			return imageViewsList.size();
 		}
 
 		@Override
 		public boolean isViewFromObject(View arg0, Object arg1) {
-			// TODO Auto-generated method stub
 			return arg0 == arg1;
 		}
 

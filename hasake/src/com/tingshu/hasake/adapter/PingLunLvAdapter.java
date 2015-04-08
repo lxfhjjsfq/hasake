@@ -12,6 +12,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 public class PingLunLvAdapter extends BaseAdapter {
 
@@ -26,7 +28,7 @@ public class PingLunLvAdapter extends BaseAdapter {
 	@Override
 	public int getCount() {
 		// TODO Auto-generated method stub
-		return 10;
+		return list.size();
 	}
 
 	@Override
@@ -42,8 +44,27 @@ public class PingLunLvAdapter extends BaseAdapter {
 
 	@Override
 	public View getView(int position, View convertView, ViewGroup parent) {
-		convertView=LayoutInflater.from(context).inflate(R.layout.pinglun_item, null);
-		
+		Holder holder = null;
+		if (convertView == null) {
+			convertView = LayoutInflater.from(context).inflate(
+					R.layout.pinglun_item, null);
+			holder = new Holder();
+			holder.tv_pinglun_content = (TextView) convertView
+					.findViewById(R.id.tv_pinglun_content);
+			holder.tv_pinglun_name = (TextView) convertView
+					.findViewById(R.id.tv_pinglun_name);
+			holder.tv_pinglun_time = (TextView) convertView
+					.findViewById(R.id.tv_pinglun_time);
+			holder.tv_pinglun_title = (TextView) convertView
+					.findViewById(R.id.tv_pinglun_title);
+			convertView.setTag(holder);
+		} else {
+			holder = (Holder) convertView.getTag();
+		}
+		PingLunBean bean = list.get(position);
+		holder.tv_pinglun_content.setText(bean.getContent());
+		holder.tv_pinglun_name.setText("我评论了 " + bean.getNickname() + "的声音");
+		holder.tv_pinglun_time.setText(bean.getAddTime());
 		return convertView;
 	}
 
@@ -52,9 +73,14 @@ public class PingLunLvAdapter extends BaseAdapter {
 		notifyDataSetChanged();
 
 	}
-	
-	private class Holder{
-		
+
+	private class Holder {
+		TextView tv_pinglun_title;
+		TextView tv_pinglun_name;
+		TextView tv_pinglun_content;
+		TextView tv_pinglun_time;
+		ImageView iv_pinglun_face;
+		ImageView iv_pinglun_zhuanji;
 	}
 
 }

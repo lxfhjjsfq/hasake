@@ -145,6 +145,7 @@
             android:layout_weight="1" />
 
         <TextView
+            android:id="@+id/act_zan_zan_item_down"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:drawableLeft="@drawable/down_count"

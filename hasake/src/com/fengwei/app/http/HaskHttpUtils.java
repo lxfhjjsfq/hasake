@@ -71,18 +71,12 @@ public class HaskHttpUtils {
 		try {
 
 			HttpUtils httpUtils = new HttpUtils();
-			StringBuilder sb = new StringBuilder(url);
-			sb.append('?');
-			// ?method=save&title=12345678&timelength=26&
-			// 迭代Map拼接请求参数
+			RequestParams params = new RequestParams();
 			for (Map.Entry<String, Object> entry : parms.entrySet()) {
-				sb.append(entry.getKey()).append('=')
-						.append(URLEncoder.encode(entry.getValue().toString(), "UTF-8"))
-						.append('&');
+				params.addBodyParameter(entry.getKey(), entry.getValue().toString());
 			}
-			sb.deleteCharAt(sb.length() - 1);// 删除最后一个"&"
-			Log.d("hask", "url "+sb.toString());
-			httpUtils.send(HttpMethod.POST, sb.toString(),
+			Log.d("hask", "url "+url);
+			httpUtils.send(HttpMethod.POST, url,params,
 					new RequestCallBack<String>() {
 
 						@Override
@@ -115,21 +109,14 @@ public class HaskHttpUtils {
 		try {
 
 			HttpUtils httpUtils = new HttpUtils();
-			StringBuilder sb = new StringBuilder(url);
-			sb.append('?');
-			// ?method=save&title=12345678&timelength=26&
-			// 迭代Map拼接请求参数
-			for (Map.Entry<String, Object> entry : parms.entrySet()) {
-				sb.append(entry.getKey()).append('=')
-						.append(URLEncoder.encode(entry.getValue().toString(), "UTF-8"))
-						.append('&');
-			}
-			sb.deleteCharAt(sb.length() - 1);// 删除最后一个"&"
-			Log.d("hask", "url "+sb.toString());
+			Log.d("hask", "url "+ url);
 			
 			RequestParams params = new RequestParams();
+			for (Map.Entry<String, Object> entry : parms.entrySet()) {
+				params.addBodyParameter(entry.getKey(), entry.getValue().toString());
+			}
 			params.addBodyParameter("ViderUrl", new File(filePath));
-			httpUtils.send(HttpMethod.POST, sb.toString(),params,
+			httpUtils.send(HttpMethod.POST, url,params,
 					new RequestCallBack<String>() {
 						@Override
 						public void onStart() {

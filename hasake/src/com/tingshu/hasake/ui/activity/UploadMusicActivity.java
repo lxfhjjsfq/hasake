@@ -50,7 +50,7 @@ public class UploadMusicActivity extends BaseActivity {
 
 	@Override
 	protected void initView() {
-		setTitleContent(getResources().getString(R.string.title_create_album));
+		setTitleContent(getResources().getString(R.string.title_upload_misic));
 		
 		ib_addType = (ImageButton) findViewById(R.id.act_upload_music_add_type);
 		ib_addAlbum = (ImageButton) findViewById(R.id.act_upload_music_add_album);
@@ -89,12 +89,18 @@ public class UploadMusicActivity extends BaseActivity {
 					Toast.makeText(UploadMusicActivity.this, "请先选择类型", Toast.LENGTH_SHORT).show();
 					return;
 				}
+				int aid = SfpUtils.getIntDataToSp(UploadMusicActivity.this, SfpUtils.USER_ID,0);
+				if(aid == 0 ){
+					Toast.makeText(UploadMusicActivity.this, "还没有登陆哦", Toast.LENGTH_SHORT).show();
+					return;
+				}
 				AlbumSelectDialog dialog = new AlbumSelectDialog(UploadMusicActivity.this);
 				int typeId = HasakeConfig.getSubTypeId(tv_addType.getText().toString());
-				dialog.initAlubmList(typeId);
+				dialog.initAlubmList(aid, typeId);
 				dialog.setAlbumClickListener(new AlbumClickListener() {
-					public void onAlbumSelect(String album, int albumId) {
+					public void onAlbumSelect(String album, int id) {
 						tv_addAlbum.setText(album);
+						albumId = id;
 					}
 				});
 				dialog.show();
@@ -169,7 +175,7 @@ public class UploadMusicActivity extends BaseActivity {
 		parms.put("Des", et_addDes.getText());
 		parms.put("AccountID", aid);
 		parms.put("VideoImg", "");
-		parms.put("ViderUrl", "123");
+//		parms.put("ViderUrl", "123");
 		HaskHttpUtils.upload(Constans.AddMusic, parms, filePath, new UploadCallback() {
 			public void onSuccess(String result) {
 				Toast.makeText(UploadMusicActivity.this, "onSuccess", Toast.LENGTH_SHORT).show();

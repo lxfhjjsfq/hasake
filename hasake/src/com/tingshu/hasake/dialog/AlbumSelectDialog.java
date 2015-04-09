@@ -57,14 +57,13 @@ public class AlbumSelectDialog extends Dialog{
 		setContentView(layout);
 	}
 	
-	public void initAlubmList(int typeId){
+	public void initAlubmList(int userId, int typeId){
+//		http://117.18.5.80/api/album/getmyalbum?userid=1&type=10010
+		
 		HashMap<String, Object> parms = new HashMap<String, Object>();
+		parms.put("userid", userId);
 		parms.put("type", typeId);
-		parms.put("Type1", 0);
-		parms.put("Des", "");
-		parms.put("Cur", 1);
-		parms.put("Rows", 10);
-		HaskHttpUtils.sendGet(Constans.GetAlbum, parms, new HttpRequestCallBack() {
+		HaskHttpUtils.sendGet(Constans.GetMyAlbum, parms, new HttpRequestCallBack() {
 			public void onSuccess(String result) {
 				JSONObject jsonObject = (JSONObject) JSONObject
 						.parse(result);

@@ -63,6 +63,7 @@ public class MusicSelectDialog extends Dialog{
 		Display display = m.getDefaultDisplay(); //  获取屏幕宽、高用
 		WindowManager.LayoutParams params = getWindow().getAttributes(); // 获取对话框当前的参数值
 		params.width = (int) (display.getWidth() * 0.90); // 宽度设置为屏幕的0.7
+		params.height = (int) (display.getHeight() * 0.70); // 宽度设置为屏幕的0.7
 		getWindow().setAttributes(params);
 	}
 	

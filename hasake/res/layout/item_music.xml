@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" 
+    android:paddingTop="30dip"
+    android:background="@drawable/item_bg">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <ImageView
+            android:layout_width="0dip"
+            android:layout_height="50dip"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:src="@drawable/zhoujielu" 
+            android:layout_marginLeft="15dip"/>
+
+        <LinearLayout
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="24dip"
+            android:layout_weight="4"
+            android:paddingRight="10dip"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/item_music_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawablePadding="8dip"
+                android:gravity="center_vertical"
+                android:maxLines="2"
+                android:textSize="15sp"
+                
+                android:text="周四:你还没来-白雪【晚上10点整第189期】"
+                android:textColor="#393939" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" 
+                android:layout_marginTop="4dip">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="13sp"
+                    android:text="来自:"
+                    android:textColor="#494949" />
+                <TextView
+                    android:id="@+id/item_music_nickname"
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:textSize="13sp"
+                    android:text="90后"
+                    android:textColor="#494949" />
+                <TextView
+                    android:id="@+id/item_music_addtime"
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="right"
+                    android:text="3天前"
+                    android:textSize="13sp"
+                    android:textColor="#494949" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dip"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:id="@+id/item_music_count"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:drawableLeft="@drawable/play_count"
+                    android:text="2.6万"
+                    android:textColor="#ff888888" />
+
+                <TextView
+                    android:id="@+id/item_music_praise_count"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginLeft="5dip"
+                    android:drawableLeft="@drawable/zan"
+                    android:text="875"
+                    android:textColor="#ff888888" />
+
+                <TextView
+                    android:id="@+id/item_music_repair"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginLeft="5dip"
+                    android:drawableLeft="@drawable/msg_count"
+                    android:text="156"
+                    android:textColor="#ff888888" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginLeft="5dip"
+                    android:drawableLeft="@drawable/zan_time"
+                    android:text="15:36"
+                    android:textColor="#ff888888" />
+            </LinearLayout>
+        </LinearLayout>
+
+        
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dip"
+        android:orientation="horizontal" >
+
+        <View
+            android:layout_width="0dip"
+            android:layout_height="0dip"
+            android:layout_weight="1" />
+
+        <TextView
+            android:id="@+id/item_music_ispraise"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/yi_zan"
+            android:text="已赞"
+            android:drawablePadding="5dip"
+            android:textColor="#f94325"
+            android:textSize="13sp" />
+
+        <View
+            android:layout_width="0dip"
+            android:layout_height="0dip"
+            android:layout_weight="1" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/pinglu_count"
+            android:text="评论"
+            android:drawablePadding="5dip"
+            android:textColor="#ff555555"
+            android:textSize="13sp"
+             />
+
+        <View
+            android:layout_width="0dip"
+            android:layout_height="0dip"
+            android:layout_weight="1" />
+
+        <TextView
+            android:id="@+id/act_zan_zan_item_down"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/down_count"
+            android:text="下载"
+            android:textColor="#ff555555"
+            android:textSize="13sp" 
+            android:drawablePadding="5dip"/>
+
+        <View
+            android:layout_width="0dip"
+            android:layout_height="0dip"
+            android:layout_weight="1" />
+    </LinearLayout>
+
+    <View
+        android:layout_marginTop="10dip"
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="#ff999999" 
+        />
+
+</LinearLayout>

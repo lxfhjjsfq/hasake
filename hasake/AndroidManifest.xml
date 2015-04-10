@@ -80,6 +80,14 @@
             android:name="com.tingshu.hasake.DongtaiActivity"
             android:screenOrientation="portrait" >
         </activity>
+        <activity
+            android:name="com.tingshu.hasake.MusicActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+                <activity
+            android:name="com.tingshu.hasake.AlbumActivity"
+            android:screenOrientation="portrait" >
+        </activity>
     </application>
 
     <uses-permission android:name="android.permission.INTERNET" />

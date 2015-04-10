@@ -136,6 +136,7 @@
                 android:visibility="visible" />
 
             <LinearLayout
+                android:id="@+id/act_main_myalbum"
                 android:layout_width="match_parent"
                 android:layout_height="42.5dip"
                 android:gravity="center_vertical"
@@ -165,6 +166,7 @@
                 android:background="#fff" />
 
             <LinearLayout
+                android:id="@+id/act_main_mymusic"
                 android:layout_width="match_parent"
                 android:layout_height="45dip"
                 android:gravity="center_vertical"

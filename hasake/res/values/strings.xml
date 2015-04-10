@@ -7,5 +7,6 @@
     <string name="title_denglu">登录</string>
     <string name="title_create_album">创建专辑</string>
 	<string name="title_upload_misic">上传音乐</string>
-	
+	<string name="title_my_misic">我的音乐</string>
+	<string name="title_my_album">我的专辑</string>
 </resources>

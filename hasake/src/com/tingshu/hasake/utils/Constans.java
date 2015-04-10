@@ -27,4 +27,5 @@ public class Constans {
 	
 	 public static final String getshowletter=IP+"/api/letter/getshowletter";
 	 public static final String GetMyAlbum = IP + "/api/album/getmyalbum";
+	 public static final String GetMyVideo = IP + "/api/Album/GetVideo";
 }

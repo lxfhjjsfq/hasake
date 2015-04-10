@@ -6,7 +6,9 @@ import com.alibaba.fastjson.JSON;
 import com.fengwei.app.http.HaskHttpUtils;
 import com.fengwei.app.http.HaskHttpUtils.HttpRequestCallBack;
 import com.tingshu.hasake.GuanZhuActivity;
+import com.tingshu.hasake.AlbumActivity;
 import com.tingshu.hasake.MyMsgActivity;
+import com.tingshu.hasake.MusicActivity;
 import com.tingshu.hasake.PingLunActvity;
 import com.tingshu.hasake.R;
 import com.tingshu.hasake.ui.activity.AlbumCreateActivity;
@@ -28,6 +30,7 @@ import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 public class LeftFragment extends BaseFragment implements OnClickListener {
@@ -49,7 +52,8 @@ public class LeftFragment extends BaseFragment implements OnClickListener {
 	private TextView tv_fans_count;
 	private TextView tv_my_zhuanji;
 	private TextView tv_my_voice;
-
+	private LinearLayout ll_main_myalbum;
+	private LinearLayout ll_main_mymusic;
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
@@ -86,6 +90,8 @@ public class LeftFragment extends BaseFragment implements OnClickListener {
 
 		bt_create = (Button) view.findViewById(R.id.bt_create);
 		bt_upload = (Button) view.findViewById(R.id.bt_upload);
+		ll_main_myalbum = (LinearLayout) view.findViewById(R.id.act_main_myalbum);
+		ll_main_mymusic = (LinearLayout) view.findViewById(R.id.act_main_mymusic);
 	}
 
 	private void initData() {
@@ -98,6 +104,8 @@ public class LeftFragment extends BaseFragment implements OnClickListener {
 		tv_bofang_jilu.setOnClickListener(this);
 		bt_create.setOnClickListener(this);
 		bt_upload.setOnClickListener(this);
+		ll_main_myalbum.setOnClickListener(this);
+		ll_main_mymusic.setOnClickListener(this);
 		tv_guanzhu.setOnClickListener(new OnClickListener() {
 
 			@Override
@@ -152,6 +160,16 @@ public class LeftFragment extends BaseFragment implements OnClickListener {
 			Intent uploadIntent = new Intent(getActivity(),
 					UploadMusicActivity.class);
 			startActivity(uploadIntent);
+			break;
+		case R.id.act_main_mymusic:
+			Intent myMusicIntent = new Intent(getActivity(),
+					MusicActivity.class);
+			startActivity(myMusicIntent);
+			break;
+		case R.id.act_main_myalbum:
+			Intent myAlbumIntent = new Intent(getActivity(),
+					AlbumActivity.class);
+			startActivity(myAlbumIntent);
 			break;
 		default:
 			break;
